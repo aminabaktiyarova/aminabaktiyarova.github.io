@@ -1,0 +1,68 @@
+# ---------------------------------------------------------------------------
+# Site configuration
+# Everything that changes often lives here. Edit this file, not the templates.
+# ---------------------------------------------------------------------------
+
+title: Amina Baktiyarova
+tagline: Achievement Begins with Courage
+description: >-
+  Educational consultant helping students with IELTS prep, university
+  applications, and scholarships abroad.
+author: Amina Baktiyarova
+
+# Start on the GitHub address. Change this to https://aminabaktiyarova.com
+# on the day the domain goes live. No trailing slash. Nothing else needs editing.
+url: "https://aminabaktiyarova.github.io"
+baseurl: ""
+
+# ---------------------------------------------------------------------------
+# Contact and channels
+# TODO: replace every REPLACE_ME before launch. Search the repo for REPLACE_ME.
+# ---------------------------------------------------------------------------
+telegram_channel: "https://t.me/aminabchannel"
+telegram_direct: "https://t.me/aminabaktiyarova"
+youtube: "https://youtube.com/@aminabaktiyarova?si=dR4iLEDGILcNt_YR"
+email: "aminabaktiyarova.e@gmail.com"
+boosty: "https://boosty.to/aminab"
+
+# Booking link. Tribute page for the general admissions consultation.
+booking_url: "https://web.tribute.tg/p/B1J"
+
+# ---------------------------------------------------------------------------
+# Digital product purchase links (Telegram Tribute)
+# ---------------------------------------------------------------------------
+tribute:
+  essay_toolkit: "https://web.tribute.tg/p/Bzc"
+  rec_letter_toolkit: "https://web.tribute.tg/p/Bz4"
+  bundle: "https://web.tribute.tg/p/Bze"
+  database_countries: "https://web.tribute.tg/p/BeT"
+
+# ---------------------------------------------------------------------------
+# Build
+# ---------------------------------------------------------------------------
+permalink: /abc/blog/:year/:slug/
+timezone: Asia/Almaty
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      nav: "abc"
+
+exclude:
+  - README.md
+  - LAUNCH.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

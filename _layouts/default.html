@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  {% feed_meta %}
+  {% seo %}
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">AB<span class="dot">.</span>{% if page.nav == 'abc' %}<span class="sep">/</span><span class="sub">AB:C</span>{% elsif page.nav == 'abe' %}<span class="sep">/</span><span class="sub">AB:E</span>{% endif %}</a>
+
+    <nav class="site-nav" aria-label="Main">
+      {% if page.nav == 'abc' %}
+      <ul>
+        {% for item in site.data.abc_nav %}
+          {% assign is_current = false %}
+          {% if page.url == item.url %}{% assign is_current = true %}{% endif %}
+          {% if item.url == '/abc/blog/' and page.layout == 'post' %}{% assign is_current = true %}{% endif %}
+          <li><a href="{{ item.url | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <ul>
+        <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a></li>
+        <li><a href="{{ '/abc/' | relative_url }}">AB:C</a></li>
+        <li><a href="{{ '/abe/' | relative_url }}"{% if page.url == '/abe/' %} aria-current="page"{% endif %}>AB:E</a></li>
+      </ul>
+      {% endif %}
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  {{ content }}
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>AB:C</h4>
+        <ul>
+          <li><a href="{{ '/abc/' | relative_url }}">About</a></li>
+          <li><a href="{{ '/abc/services/' | relative_url }}">Services</a></li>
+          <li><a href="{{ '/abc/process/' | relative_url }}">Process</a></li>
+          <li><a href="{{ '/abc/products/' | relative_url }}">Digital products</a></li>
+          <li><a href="{{ '/abc/blog/' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/abc/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="{{ site.telegram_channel }}">Telegram channel</a></li>
+          <li><a href="{{ site.youtube }}">YouTube</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Working hours</h4>
+        <ul>
+          <li>13:00 to 20:00, Astana time, Mon to Fri</li>
+          <li>Message first, calls by request</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="colophon">
+      <span>&copy; {{ 'now' | date: "%Y" }} {{ site.author }}</span>
+      <span>{{ site.tagline }}</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

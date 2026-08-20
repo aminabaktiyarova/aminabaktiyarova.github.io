@@ -1,0 +1,571 @@
+/* ==========================================================================
+   Amina Baktiyarova, personal hub
+   Identity system: navy line art, one burgundy focal point, PT Serif + PT Sans.
+   No gradients, no drop shadows, no rounded corners.
+   ========================================================================== */
+
+:root {
+  --navy: #0E254E;
+  --burgundy: #7A1F2B;
+  --white: #FFFFFF;
+
+  /* Navy tints. Derived from --navy, not new brand colours. */
+  --rule: #D7DCE6;
+  --band: #F4F6FA;
+  --muted: #55617D;
+
+  --serif: "PT Serif", Georgia, "Times New Roman", serif;
+  --sans: "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --wide: 62rem;
+  --measure: 38rem;
+  --gutter: 1.5rem;
+}
+
+/* --------------------------------------------------------------- reset -- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg { max-width: 100%; height: auto; }
+
+a { color: var(--navy); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { color: var(--burgundy); }
+
+:focus-visible {
+  outline: 2px solid var(--burgundy);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  font-family: var(--sans);
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  background: var(--navy);
+  color: var(--white);
+  padding: 0.6rem 1rem;
+}
+
+/* ------------------------------------------------------------ typography -- */
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6em;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 5.5vw, 3.1rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  line-height: 1.2;
+  margin-top: 2.6rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+  line-height: 1.3;
+  margin-top: 2rem;
+}
+
+p, ul, ol { margin: 0 0 1.15rem; }
+
+ul, ol { padding-left: 1.15rem; }
+li { margin-bottom: 0.45rem; }
+
+strong { font-weight: 700; }
+
+blockquote {
+  margin: 2rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--burgundy);
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* The eyebrow is the utility face doing utility work: it labels, nothing more. */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.lede {
+  font-size: 1.2rem;
+  line-height: 1.55;
+}
+
+.note {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------------- layout -- */
+
+.wrap {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.prose { max-width: var(--measure); }
+
+.rule {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 3.5rem 0;
+}
+
+.band {
+  background: var(--band);
+  padding: 3.5rem 0;
+  margin: 4rem 0;
+}
+
+.stack > * + * { margin-top: 1.15rem; }
+
+/* ---------------------------------------------------------------- header -- */
+
+.site-head {
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-head .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  padding-top: 1.15rem;
+  padding-bottom: 1.15rem;
+}
+
+.brand {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--navy);
+  white-space: nowrap;
+}
+.brand .dot { color: var(--burgundy); }
+.brand .sep {
+  color: var(--rule);
+  margin: 0 0.5rem;
+  font-weight: 400;
+}
+.brand .sub {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.brand:hover { color: var(--navy); }
+.brand:hover .dot { color: var(--burgundy); }
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-nav li { margin: 0; }
+.site-nav a {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--navy);
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { border-bottom-color: var(--rule); color: var(--navy); }
+.site-nav a[aria-current="page"] { border-bottom-color: var(--burgundy); }
+
+/* ------------------------------------------------------------------ hero -- */
+
+.hero {
+  padding: 4rem 0 3rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero h1 { margin-bottom: 1rem; }
+
+.hero-mark {
+  justify-self: center;
+  width: 100%;
+  max-width: 15rem;
+}
+
+.slogan {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  text-align: center;
+  margin: 1.25rem 0 0;
+}
+
+/* -------------------------------------------------------- personal home -- */
+
+.home-hero {
+  padding: 5rem 0 3rem;
+  text-align: left;
+}
+
+.wordmark { margin: 0 0 1.75rem; }
+.wordmark-svg {
+  height: clamp(2.6rem, 7vw, 3.6rem);
+  width: auto;
+  display: block;
+}
+
+.home-name {
+  font-size: clamp(1.5rem, 3.5vw, 1.9rem);
+  margin-bottom: 1.25rem;
+}
+
+.doors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1.25rem;
+  margin: 1rem 0 0;
+}
+
+.door-card {
+  display: block;
+  border: 1px solid var(--rule);
+  padding: 1.75rem;
+  text-decoration: none;
+  color: var(--navy);
+  transition: border-color 0.15s ease;
+}
+.door-card:hover { border-color: var(--navy); color: var(--navy); }
+.door-card .card-mark { height: 3.25rem; width: auto; display: block; margin-bottom: 1.5rem; }
+.door-card h2 { font-size: 1.35rem; margin: 0 0 0.35rem; }
+.door-card p { margin: 0; font-size: 0.98rem; line-height: 1.55; }
+.door-card .status {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.9rem;
+}
+.door-card .go {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--burgundy);
+  display: inline-block;
+  margin-top: 1.1rem;
+}
+.door-card.is-soon { background: var(--band); border-color: transparent; }
+.door-card.is-soon:hover { border-color: var(--rule); }
+
+/* --------------------------------------------------------------- buttons -- */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 0.75rem 1.4rem;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: var(--navy); color: var(--white); }
+
+.btn-accent { border-color: var(--burgundy); color: var(--burgundy); }
+.btn-accent:hover { background: var(--burgundy); color: var(--white); }
+
+/* ---------------------------------------------------------------- tables -- */
+
+/* Tables are written as plain markdown. Kramdown attaches a class with
+   {: .compare} on the line after the table, so pages need no raw HTML. */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.95rem;
+  margin: 0 0 1.75rem;
+  table-layout: auto;
+}
+
+th {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-align: left;
+  color: var(--muted);
+  border-bottom: 1px solid var(--navy);
+  padding: 0.5rem 0.85rem 0.5rem 0;
+  vertical-align: bottom;
+}
+
+td {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.8rem 0.85rem 0.8rem 0;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+th:last-child, td:last-child { padding-right: 0; }
+
+/* Two-column tables: the first column names the thing. */
+table td:first-child { font-weight: 700; }
+
+/* Comparison tables: row labels down the first column. */
+.compare th:first-child { width: 8rem; }
+.compare td:first-child {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------- fact list -- */
+
+.facts {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+.facts li {
+  margin: 0;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: minmax(8rem, 12rem) 1fr;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.98rem;
+}
+.facts .k { grid-column: 1; }
+.facts .k + span { grid-column: 2; }
+.facts .k {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  padding-top: 0.22rem;
+}
+
+/* ---------------------------------------------------------------- steps -- */
+/* Numbered because the customer journey genuinely is a sequence. */
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: step;
+}
+.steps > li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  gap: 0 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+.steps > li::before {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  content: counter(step, decimal-leading-zero);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--burgundy);
+  padding-top: 0.4rem;
+}
+.steps h3 { grid-column: 2; grid-row: 1; margin: 0 0 0.35rem; font-size: 1.05rem; }
+.steps p  { grid-column: 2; grid-row: 2; margin: 0; }
+
+/* ----------------------------------------------------------------- posts -- */
+
+.post-list { list-style: none; padding: 0; margin: 0; }
+.post-list li {
+  margin: 0;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.post-list h2 { margin: 0 0 0.35rem; font-size: 1.2rem; }
+.post-list h2 a { text-decoration: none; }
+.post-list h2 a:hover { text-decoration: underline; }
+.post-list p { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.98rem; }
+
+.post-meta {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+.tag-row li { margin: 0; }
+.tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  text-decoration: none;
+}
+.tag:hover { border-color: var(--burgundy); color: var(--burgundy); }
+.tag[aria-current="page"] { border-color: var(--burgundy); color: var(--burgundy); }
+
+.post-body { max-width: var(--measure); }
+.post-body h2 { font-size: 1.3rem; }
+
+/* ---------------------------------------------------------------- footer -- */
+
+.site-foot {
+  border-top: 1px solid var(--rule);
+  margin-top: 5rem;
+  padding: 2.5rem 0 3.5rem;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.site-foot .cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 2rem;
+}
+.site-foot h4 {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+.site-foot ul { list-style: none; margin: 0; padding: 0; }
+.site-foot li { margin-bottom: 0.4rem; }
+.site-foot a { color: var(--navy); text-decoration: none; }
+.site-foot a:hover { color: var(--burgundy); text-decoration: underline; }
+.site-foot .colophon {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+}
+
+/* ------------------------------------------------------------------ mark -- */
+/* The threshold and the book carry their own strokes and colours inline,
+   referencing the palette variables, so nothing here overrides them. */
+
+.mark { display: block; color: var(--navy); }
+.mark .accent { color: var(--burgundy); }
+
+/* ------------------------------------------------------------ responsive -- */
+
+@media (max-width: 46rem) {
+  body { font-size: 1rem; }
+
+  .hero { padding: 2.5rem 0 2rem; }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .hero-mark {
+    order: -1;
+    max-width: 9rem;
+    justify-self: start;
+  }
+  .slogan { text-align: left; }
+
+  .home-hero { padding: 3rem 0 2rem; }
+
+  .facts li { grid-template-columns: 1fr; gap: 0.15rem; }
+  .facts .k { padding-top: 0; }
+
+  .steps > li { grid-template-columns: 2rem 1fr; }
+
+  .band { padding: 2.5rem 0; margin: 3rem 0; }
+
+  table { font-size: 0.82rem; }
+  th { font-size: 0.62rem; letter-spacing: 0.08em; }
+  th, td { padding-right: 0.5rem; }
+  .compare th:first-child { width: auto; }
+}
+
+/* -------------------------------------------------------------- printing -- */
+
+@media print {
+  .site-nav, .actions, .site-foot { display: none; }
+  body { font-size: 11pt; color: #000; }
+  a { text-decoration: none; color: #000; }
+}
