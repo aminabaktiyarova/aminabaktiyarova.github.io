@@ -8,8 +8,6 @@ lede: "What happens after you first reach out, and what to expect at every stage
 description: "How AB:C works, from first contact through diagnostic, ongoing mentorship, payment, and confidentiality."
 ---
 
-The numbered list below starts at first contact. Add or remove <li> blocks and
-the numbering follows.
 
 <ol class="steps">
   <li>
