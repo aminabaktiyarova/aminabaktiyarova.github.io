@@ -8,8 +8,6 @@ lede: "Every service AB:C offers, and what's included in each."
 description: "AB:C services and pricing: diagnostics, reviews, long-term mentorship, IELTS and test prep, and institutional consulting."
 ---
 
-Every new client starts with a diagnostic. Everything below is what can follow it.
-
 ## Consultations and diagnostics
 
 | Service | Format |
@@ -22,15 +20,15 @@ Every new client starts with a diagnostic. Everything below is what can follow i
 
 | Service | Scope |
 |---|---|
-| Portfolio review | Full application document set, flat fee. 26 EUR. |
-| Essay or document review | Per personal statement, essay, supplemental, or motivation letter. 9 EUR each. |
+| Portfolio review | Full application document set, flat fee. 36 EUR. |
+| Essay or document review | Per personal statement, essay, supplemental, or motivation letter. 11 EUR each. |
 | IELTS written work review | Per writing task response, Task 1 or Task 2 priced separately. 11 EUR per task. |
 
 ## Long-term mentorship
 
 The full journey, from diagnosis and strategy through program selection, preparation, essays, submission, results, visa and move, and the first weeks abroad. Works with all countries. 
 Research mentorship, helping you find and complete a real research project for your portfolio, is included here, not priced separately. 
-Weekly is 60 EUR plus Tribute fees, monthly is 230 EUR plus Tribute fees.
+Weekly is 80 EUR plus Tribute fees, monthly is 300 EUR plus Tribute fees.
 
 | | Weekly | Monthly |
 |---|---|---|
@@ -68,7 +66,7 @@ The diagnostic consultation determines whether you need skill-based or subject-c
 
 | Service | What it is |
 |---|---|
-| Curriculum audit | A structured review of an existing IELTS prep or TESOL course program, with a written findings and recommendations report. Starting at 250 EUR, scaled for full-program scope, quoted after a scoping call. |
+| Curriculum audit | A structured review of an existing IELTS prep or TESOL course program, with a written findings and recommendations report. Starting at 300 EUR, scaled for full-program scope, quoted after a scoping call. |
 | Curriculum design and coordination | Project-based support building or restructuring a course or program. Quoted per project after scoping. |
 | Workshops and webinars | Single-session training for staff or students. 25 EUR per hour of session. |
 | Partnerships | Referral, co-branded content, or ongoing collaboration with centres or private schools. Custom arrangement, discussed directly. |
