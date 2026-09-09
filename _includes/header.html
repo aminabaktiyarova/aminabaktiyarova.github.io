@@ -1,0 +1,13 @@
+<header>
+  <div class="bar">
+    <a class="mark" href="{{ '/' | relative_url }}">Amina Baktiyarova<span>.</span></a>
+    <nav aria-label="Main">
+      <a href="{{ '/' | relative_url }}"{% if page.nav == 'about' %} aria-current="page"{% endif %}>About</a>
+      <a href="{{ '/research/' | relative_url }}"{% if page.nav == 'research' %} aria-current="page"{% endif %}>Research</a>
+      <a href="{{ '/blog/' | relative_url }}"{% if page.nav == 'blog' %} aria-current="page"{% endif %}>Blog</a>
+      <a href="{{ '/abc/' | relative_url }}"{% if page.nav == 'abc' %} aria-current="page"{% endif %}>AB:C</a>
+      <a href="{{ '/abe/' | relative_url }}"{% if page.nav == 'abe' %} aria-current="page"{% endif %}>AB:E</a>
+      <a href="{{ '/contact/' | relative_url }}"{% if page.nav == 'contact' %} aria-current="page"{% endif %}>Contact</a>
+    </nav>
+  </div>
+</header>

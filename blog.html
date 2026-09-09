@@ -1,0 +1,80 @@
+---
+layout: default
+title: Blog
+description: >-
+  Posts on studying abroad, IELTS and English, research, and whatever else is worth writing down.
+nav: blog
+permalink: /blog/
+redirect_from:
+  - /abc/blog/
+  - /abc/blog/languages/
+  - /abc/blog/studies/
+  - /abc/blog/research/
+---
+  <div class="wrap top">
+    <h1>Blog</h1>
+    {% if site.posts.size == 0 %}
+    <p class="lede">Nothing here yet. The first posts are on their way.</p>
+    {% endif %}
+  </div>
+
+  <div class="wrap">
+    {% if site.posts.size > 0 %}
+    {% assign tags = site.tags | sort %}
+    <div class="tagbar" id="tagbar">
+      <button type="button" class="tag on" data-tag="">All</button>
+      {% for tag in tags %}
+      <button type="button" class="tag" data-tag="{{ tag[0] }}">{{ tag[0] }}</button>
+      {% endfor %}
+    </div>
+
+    <ul class="posts" id="posts">
+      {% for post in site.posts %}
+      <li data-tags="|{{ post.tags | join: '|' }}|">
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>
+          {% for t in post.tags %}<button type="button" class="tag" data-tag="{{ t }}">{{ t }}</button>{% endfor %}
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <p class="empty" id="empty" hidden>No posts with that tag.</p>
+
+    <script>
+    (function () {
+      const items = Array.from(document.querySelectorAll('#posts > li'));
+      const bar = document.getElementById('tagbar');
+      const empty = document.getElementById('empty');
+
+      function apply(tag) {
+        let shown = 0;
+        items.forEach(li => {
+          const hit = !tag || li.dataset.tags.includes('|' + tag + '|');
+          li.hidden = !hit;
+          if (hit) shown++;
+        });
+        empty.hidden = shown > 0;
+        bar.querySelectorAll('.tag').forEach(b => {
+          b.classList.toggle('on', (b.dataset.tag || '') === tag);
+        });
+        if (tag) {
+          history.replaceState(null, '', '#' + tag);
+        } else {
+          history.replaceState(null, '', location.pathname);
+        }
+      }
+
+      document.addEventListener('click', function (e) {
+        const btn = e.target.closest('.tag');
+        if (!btn) return;
+        apply(btn.dataset.tag || '');
+      });
+
+      const start = decodeURIComponent(location.hash.replace('#', ''));
+      if (start) apply(start);
+    })();
+    </script>
+    {% endif %}
+  </div>
