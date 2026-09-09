@@ -1,311 +1,199 @@
-# Launch guide
+# Putting the site live
 
-Follow these in order. Anything in ALL CAPS is something you replace with your
-own value.
+Follow this top to bottom. Every command is one line: copy it, paste it into
+Terminal, press Enter.
 
-One thing worth knowing before you start: the site is public the moment GitHub
-Pages is switched on. Nobody will know the address, but write the text before
-you point your domain at it.
-
----
-
-## 1. Put the files somewhere permanent
-
-Do not work inside Downloads. Files get cleared out of there by accident.
-
-1. Double click `aminabaktiyarova-site.zip`. It unpacks to a folder called
-   `site`.
-2. Rename that folder to `aminabaktiyarova.com` and drag it to your home folder,
-   the one with your name on it in the Finder sidebar.
-
-From here on, the folder lives at `~/aminabaktiyarova.com`.
+Your favicon lives at `assets/img/favicon.svg` in the repo. Step 9 saves it and
+step 12 puts it back, so you do not need to do anything about it by hand.
 
 ---
 
-## 2. Get a text editor
+## Part 1: get the new files onto your Mac
 
-Do not use TextEdit. It saves rich text and will silently break the files.
+1. Download `site.zip` from the chat.
 
-Install Visual Studio Code, free, from `code.visualstudio.com`. Open it, then
-File, Open Folder, and choose `aminabaktiyarova.com`. You will see the whole
-site in the sidebar and can click between files.
+2. Go to your Downloads folder and double-click `site.zip`. It becomes a folder
+   called `site`.
 
----
-
-## 3. Fill in the settings file
-
-Open `_config.yml`.
-
-Eight values say `REPLACE_ME`. Replace each with your real link:
-
-- `telegram_channel`, your public channel
-- `telegram_direct`, your personal username for direct messages
-- `telegram_questions_bot`, the anonymous questions bot
-- `youtube`
-- `email`
-- `boosty`
-- `booking_url`, where a consultation booking starts
-
-The four Tribute product links are already correct.
-
-There is deliberately no `CNAME` file in the folder. That file is what tells
-GitHub to serve the site at your own domain, and if it arrives before your DNS
-is ready the site will not load at any address. GitHub creates it for you in
-step 10, at the right moment.
+3. Leave it there. The commands below assume it is at `~/Downloads/site`.
 
 ---
 
-## 4. Write the text
+## Part 2: open the repo in Terminal
 
-Everything in square brackets is a slot for you. Delete the brackets along with
-the placeholder text inside them.
+4. Open Terminal: press Cmd and Space together, type `Terminal`, press Enter.
 
-In VS Code, press Cmd+Shift+F and search for `[` to see every slot, grouped by
-file. Work down the list.
-
-The lines at the top of each file between the two `---` lines are the page
-title, the single line that sits under the title, and the description that shows
-in Google results. Everything below is the page body.
-
-Pages, in the order I would write them:
-
-| Page | File |
-|---|---|
-| AB:C main page | `abc/index.md` |
-| Services | `abc/services.md` |
-| How we work | `abc/process.md` |
-| Digital products | `abc/products.md` |
-| Contact | `abc/contact.md` |
-| Home | `index.html` |
-| AB:E | `abe/index.md` |
-| Blog index | `abc/blog.md` |
-| Blog tag pages | `abc/tags/` |
-| Not found page | `404.html` |
-| Footer | `_layouts/default.html` |
-
----
-
-## 5. Install git
-
-Open Terminal. It is in Applications, Utilities, or press Cmd+Space and type
-Terminal.
-
-Type this and press return:
+5. Go to your copy of the repo:
 
 ```
-git --version
+cd ~/aminabaktiyarova.github.io
 ```
 
-If it prints a version number, you already have it. If a box appears offering to
-install developer tools, click Install and wait. It takes a few minutes.
-
-Then set yourself up. Use the email address on your GitHub account:
+If that says "no such file or directory", find it with this:
 
 ```
-git config --global user.name "Amina Baktiyarova"
-git config --global user.email "YOUR_GITHUB_EMAIL"
-git config --global credential.helper osxkeychain
-git config --global init.defaultBranch main
+find ~ -maxdepth 4 -type d -name "aminabaktiyarova.github.io" 2>/dev/null
+```
+
+Then type `cd ` and paste the path it printed.
+
+If it printed nothing, the repo is not on this Mac yet. Get it with:
+
+```
+cd ~ && git clone https://github.com/aminabaktiyarova/aminabaktiyarova.github.io.git && cd aminabaktiyarova.github.io
+```
+
+6. Confirm you are in the right folder. This should list `_config.yml`, `CNAME`,
+   `abc`, `abe`, `assets` among other things:
+
+```
+ls
 ```
 
 ---
 
-## 6. Make a token so git can log in
+## Part 3: back up, then replace
 
-GitHub stopped accepting account passwords from the command line. You need a
-token instead. You do this once.
-
-1. On GitHub, click your avatar, top right, then Settings.
-2. Bottom of the left sidebar, Developer settings.
-3. Personal access tokens, then Tokens (classic).
-4. Generate new token, then Generate new token (classic).
-5. Note: `site`. Expiration: 90 days or No expiration, your call.
-6. Tick the box marked **repo**. Nothing else.
-7. Generate token, then copy it. You cannot see it again after you leave the
-   page, so paste it somewhere safe for the next five minutes.
-
----
-
-## 7. Replace the repository
-
-1. Go to your `aminabaktiyarova.github.io` repository.
-2. Settings, scroll to the bottom, Danger Zone, Delete this repository. Type the
-   name to confirm.
-3. Back on GitHub, click the plus icon top right, New repository.
-4. Repository name: `aminabaktiyarova.github.io`, spelled exactly, using your
-   real GitHub username in place of `aminabaktiyarova` if it differs.
-5. Set it to **Public**. GitHub Pages will not publish a private repository on a
-   free account.
-6. Do not tick Add a README, .gitignore, or a licence. Leave it empty.
-7. Create repository.
-
----
-
-## 8. Upload the site
-
-In Terminal, one line at a time. Replace USERNAME with your GitHub username:
+7. Make sure your local copy matches GitHub:
 
 ```
-cd ~/aminabaktiyarova.com
-git init
-git add -A
-git commit -m "New site"
-git remote add origin https://github.com/aminabaktiyarova/aminabaktiyarova.github.io.git
-git branch -M main
-git push -u origin main
-```
-
-On the last command it asks for a username and a password. Username is your
-GitHub username. For the password, paste the token from step 6. It will not show
-anything as you paste, that is normal. Press return.
-
-macOS saves it, so you will not be asked again.
-
-Refresh the repository page on GitHub and your files should be there.
-
----
-
-## 9. Switch on GitHub Pages
-
-1. In the repository, Settings, then Pages in the left sidebar.
-2. Source: Deploy from a branch.
-3. Branch: `main`, folder: `/ (root)`. Save.
-4. Wait two or three minutes. The Actions tab shows a job called
-   `pages build and deployment`. A green tick means it worked.
-5. Open `https://aminabaktiyarova.github.io`.
-
-Read every page. Anything wrong, fix it in VS Code, then:
-
-```
-cd ~/aminabaktiyarova.com
-git add -A
-git commit -m "Fixes"
-git push
-```
-
-Changes appear about a minute later. Repeat as often as you like.
-
----
-
-## 10. The domain
-
-Only do this once the github.io version looks right.
-
-**Buy it.** `aminabaktiyarova.com` from any registrar, roughly 10 to 15 USD a
-year. Namecheap, Porkbun, Cloudflare and GoDaddy all work.
-
-**Point it at GitHub.** In your registrar's DNS panel, delete any records the
-registrar created for `@` by default, then add these five:
-
-| Type | Name | Value |
-|---|---|---|
-| A | @ | 185.199.108.153 |
-| A | @ | 185.199.109.153 |
-| A | @ | 185.199.110.153 |
-| A | @ | 185.199.111.153 |
-| CNAME | www | USERNAME.github.io |
-
-The `www` record matters even though you are using the bare domain. It is the
-one that keeps working if GitHub ever changes those four addresses.
-
-**Tell GitHub.** Repository Settings, Pages, Custom domain. Type
-`aminabaktiyarova.com` and Save.
-
-DNS can take anywhere from ten minutes to a full day. GitHub will show a DNS
-check that goes green when it is ready.
-
-**Important:** saving the custom domain makes GitHub add a `CNAME` file to your
-repository. Your copy on the Mac does not have it, so before your next push you
-must run:
-
-```
-cd ~/aminabaktiyarova.com
 git pull
 ```
 
-Skip this and your next push will be rejected.
-
-**Turn on HTTPS.** Back in Settings, Pages, tick Enforce HTTPS. If it is greyed
-out, the certificate is still being issued. Wait an hour and check again. If it
-is still greyed out after a day, remove the custom domain, save, add it again,
-save.
-
----
-
-## 11. Before you tell anyone
-
-- Open every page on your phone as well as your laptop.
-- No square brackets left anywhere. In VS Code, Cmd+Shift+F, search `[`.
-- No `REPLACE_ME` left. Same search.
-- Every link in the footer and on the contact page opens the right place.
-- All four Tribute links open the right product.
-- The old Notion blog is archived and no longer linked from your channels.
-- Ko-fi is gone from every bio and pinned message, not only from the site.
-
----
-
-## Publishing a blog post, from now on
-
-1. In VS Code, open `_drafts/TEMPLATE.md` and Save As into the `_posts` folder.
-2. Name it `YYYY-MM-DD-short-title.md`, for example
-   `2026-09-04-uk-scholarship-deadlines.md`.
-3. Fill in the title, the one line summary, and exactly one tag:
-   `ielts-english`, `strategy`, or `research`.
-4. Write the post in plain markdown underneath.
-5. In Terminal:
+8. Copy the whole repo to your Desktop, in case you want to undo this:
 
 ```
-cd ~/aminabaktiyarova.com
+cp -r . ~/Desktop/site-backup
+```
+
+9. Save the favicon out of the repo for a moment:
+
+```
+cp assets/img/favicon.svg ~/Desktop/favicon.svg
+```
+
+10. Delete the old site files. This keeps `.git` (your history) and `CNAME`
+    (your domain), and removes everything else:
+
+```
+find . -maxdepth 1 ! -name . ! -name .git ! -name CNAME -exec rm -rf {} +
+```
+
+11. Copy the new files in:
+
+```
+cp -r ~/Downloads/site/. .
+```
+
+12. Put the favicon back:
+
+```
+mkdir -p assets/img && cp ~/Desktop/favicon.svg assets/img/favicon.svg
+```
+
+---
+
+## Part 4: check before you push
+
+13. Your domain file must still be there. This should print
+    `aminabaktiyarova.com`:
+
+```
+cat CNAME
+```
+
+If it prints nothing, stop here. Copy everything back from
+`~/Desktop/site-backup` and tell me what happened.
+
+14. The favicon must be there. This should print `favicon.svg`:
+
+```
+ls assets/img/
+```
+
+15. See what is about to change:
+
+```
+git status
+```
+
+You will see a long list of deleted old files and added new ones. That is
+correct.
+
+---
+
+## Part 5: push
+
+16. Stage everything:
+
+```
 git add -A
-git commit -m "New post"
+```
+
+17. Commit:
+
+```
+git commit -m "Rebuild site as a personal hub"
+```
+
+18. Push:
+
+```
 git push
 ```
 
-It appears on the blog page and on its tag page by itself. You never edit a
-list by hand.
+GitHub takes one to two minutes to rebuild. If the build fails you get an email,
+and the Actions tab on the repository page shows what broke.
 
 ---
 
-## Editing anything else
+## Part 6: check it worked
 
-Same three commands every time. Edit in VS Code, then:
+Open each of these in a browser:
 
-```
-cd ~/aminabaktiyarova.com
-git add -A
-git commit -m "WHAT YOU CHANGED"
-git push
-```
-
----
-
-## Where things live
-
-```
-_config.yml          every link, handle, and setting
-_data/abc_nav.yml    the AB:C menu
-_layouts/            page shells
-_includes/           the door, the book, and the AB mark, as SVG
-_posts/              published blog posts
-_drafts/TEMPLATE.md  the post template
-assets/css/style.css the whole design, one file
-assets/img/          favicon
-```
-
-Colours, typefaces and spacing are variables at the top of
-`assets/css/style.css`. Change one there and it changes everywhere.
+- `aminabaktiyarova.com` shows the new About page with the photo row
+- `aminabaktiyarova.com/research/` shows the three projects
+- `aminabaktiyarova.com/abc/services/` bounces you to `/abc/`
+- `aminabaktiyarova.com/abc/blog/` bounces you to `/blog/`
+- `aminabaktiyarova.com/nonsense` shows the new "Page not found" page
+- The door icon appears in the browser tab
 
 ---
 
-## If something breaks
+## If you want to see it before pushing
 
-**Push rejected.** Run `git pull`, then push again.
+Between step 12 and step 16, run:
 
-**Site not updating.** Check the Actions tab for a red cross. Click into it to
-see which file it is complaining about.
+```
+bundle install && bundle exec jekyll serve
+```
 
-**Page is blank or looks wrong.** Usually a missing `---` line at the top of a
-file, or a smart quote. Make sure VS Code is saving plain text.
+Open the address it prints, usually `http://127.0.0.1:4000`. Press Ctrl and C
+together in Terminal to stop it. This needs Ruby installed. If it errors out,
+skip it, push, and check the live site instead.
 
-**Everything looks unstyled.** The stylesheet path is wrong, which happens if
-`baseurl` in `_config.yml` was changed. It should be empty quotes.
+---
+
+## Undoing it
+
+If you have not pushed yet:
+
+```
+git checkout . && git clean -fd
+```
+
+If you have already pushed, tell me and I will give you the command to roll back
+that commit.
+
+---
+
+## What changed in _config.yml
+
+- `url` now points at `https://aminabaktiyarova.com`. It was pointing at the
+  github.io address, which was putting the wrong domain into your canonical tags
+  and your sitemap.
+- The blog permalink moved from `/abc/blog/:year/:slug/` to `/blog/:year/:slug/`.
+- `boosty` removed.
+- `jekyll-redirect-from` added. This is what makes the old AB:C URLs forward
+  instead of breaking.
+- New posts default to the Blog section of the navigation instead of AB:C.
