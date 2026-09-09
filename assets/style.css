@@ -3,8 +3,8 @@
     --ink: #24365C;
     --quiet: #5A6885;
     --burgundy: #7A1F2B;
+    --row-h: 300px;
     --rule: #DCE0E8;
-    --row-h: 380px;
     --col: 700px;
     --pad: 32px;
   }
@@ -100,15 +100,16 @@
   }
   .lede + p { margin: 0 0 8px; color: var(--quiet); }
 
-  .top { padding: 76px 0 40px; }
+  .top { padding: 76px var(--pad) 40px; }
 
   .photos {
     display: flex;
-    gap: 20px;
+    align-items: flex-start;
+    gap: 14px;
     overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 18px;
-    margin-bottom: 64px;
+    padding-bottom: 16px;
+    margin-bottom: 60px;
     scrollbar-color: var(--rule) transparent;
     scrollbar-width: thin;
   }
@@ -116,6 +117,7 @@
   .photos::-webkit-scrollbar-track { background: transparent; }
   .photos::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 3px; }
   .photos::-webkit-scrollbar-thumb:hover { background: #BCC3D0; }
+  .photos:focus-visible { outline: 2px solid var(--burgundy); outline-offset: 4px; }
   .photos img {
     height: var(--row-h);
     width: auto;
@@ -127,8 +129,8 @@
   .bleed {
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-    padding-left: calc(50vw - 50% + var(--pad));
-    padding-right: var(--pad);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   section { margin-bottom: 52px; }
@@ -193,12 +195,12 @@
   .flinks { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 14px; }
 
   @media (max-width: 720px) {
-    :root { --row-h: 240px; --pad: 20px; }
+    :root { --pad: 20px; --row-h: 200px; }
     body { font-size: 16px; }
     h1 { font-size: 31px; }
     .lede { font-size: 17.5px; }
-    .top { padding: 44px 0 30px; }
-    .photos { gap: 12px; margin-bottom: 48px; }
+    .top { padding: 44px var(--pad) 30px; }
+    .photos { gap: 10px; margin-bottom: 44px; }
     .bar { padding: 18px var(--pad); }
     nav { gap: 16px; font-size: 14px; }
   }
