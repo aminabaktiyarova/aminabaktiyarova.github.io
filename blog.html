@@ -59,11 +59,13 @@ redirect_from:
         bar.querySelectorAll('.tag').forEach(b => {
           b.classList.toggle('on', (b.dataset.tag || '') === tag);
         });
-        if (tag) {
-          history.replaceState(null, '', '#' + tag);
-        } else {
-          history.replaceState(null, '', location.pathname);
-        }
+        try {
+          if (tag) {
+            history.replaceState(null, '', '#' + tag);
+          } else {
+            history.replaceState(null, '', location.pathname);
+          }
+        } catch (e) { /* blocked in sandboxed previews */ }
       }
 
       document.addEventListener('click', function (e) {

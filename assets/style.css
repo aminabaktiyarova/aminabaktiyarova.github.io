@@ -368,3 +368,144 @@
   .top .meta time { margin-right: 6px; }
   a.tag { text-decoration: none; display: inline-block; }
   .empty { color: var(--quiet); }
+
+  .shop { list-style: none; margin: 0; padding: 0; }
+  .shop li { padding: 20px 0; border-bottom: 1px solid var(--rule); }
+  .shop li:last-child { border-bottom: none; }
+  .shop h3 { font-size: 19px; margin: 0 0 6px; }
+  .shop p { margin: 0 0 10px; }
+  .shop .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+  }
+  .shop .meta .more { margin-right: 6px; }
+
+  .aside {
+    margin: 16px 0 0;
+    font-size: 15.5px;
+    color: var(--quiet);
+  }
+  #on-request { border-top: 1px solid var(--rule); padding-top: 34px; }
+  #on-request ul.plain li { margin-bottom: 10px; }
+  #on-request strong { font-weight: 500; color: var(--navy); }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .cards li {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--rule);
+    padding: 24px 24px 22px;
+  }
+  .cards li:hover { border-color: #B9C2D4; }
+  .cards .kicker {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--burgundy);
+    margin: 0 0 10px;
+  }
+  .cards h3 { font-size: 21px; line-height: 1.25; margin: 0 0 10px; }
+  .cards p { font-size: 16px; line-height: 1.6; margin: 0 0 20px; }
+  .cards .foot { margin-top: auto; }
+
+  .btn {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background: var(--navy);
+    border: 1px solid var(--navy);
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .btn:hover { background: #163364; border-color: #163364; }
+  .btn:focus-visible { outline: 2px solid var(--burgundy); outline-offset: 3px; }
+
+  @media (max-width: 620px) {
+    .cards { grid-template-columns: 1fr; gap: 14px; }
+    .cards li { padding: 20px; }
+  }
+
+  .wrap.wide { max-width: 1120px; }
+  @media (max-width: 1180px) {
+    .wrap.wide { max-width: 100%; }
+  }
+
+  /* panel grids */
+  .panels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .panels li, .panel {
+    border: 1px solid var(--rule);
+    padding: 22px 24px;
+  }
+  .panels h3, .panel h3 { margin: 0 0 8px; font-size: 19px; }
+  .panels p, .panel p { margin: 0; font-size: 16px; line-height: 1.6; }
+
+  /* two column split */
+  .split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+  }
+  .split .yes { border-top: 3px solid var(--navy); padding-top: 18px; }
+  .split .no { border-top: 3px solid var(--burgundy); padding-top: 18px; }
+  .split h3 { margin: 0 0 8px; font-size: 19px; }
+  .split p { margin: 0; }
+
+  /* numbered sequence */
+  .flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 26px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: flowstep;
+  }
+  .flow li { counter-increment: flowstep; border-top: 1px solid var(--rule); padding-top: 16px; }
+  .flow li::before {
+    content: counter(flowstep);
+    display: block;
+    font-family: "Literata", serif;
+    font-size: 30px;
+    line-height: 1;
+    color: var(--burgundy);
+    margin-bottom: 10px;
+  }
+  .flow h3 { margin: 0 0 7px; font-size: 18px; }
+  .flow p { margin: 0; font-size: 15.5px; line-height: 1.6; }
+
+  /* marked off note */
+  .note {
+    background: #F7F8FA;
+    border-left: 3px solid var(--burgundy);
+    padding: 24px 26px;
+  }
+  .note h3 { margin: 0 0 12px; font-size: 19px; }
+  .note ul { margin: 0; padding-left: 20px; }
+  .note li { margin-bottom: 8px; }
+  .note li:last-child { margin-bottom: 0; }
+
+  .cols2 { columns: 2; column-gap: 34px; }
+  @media (max-width: 620px) { .cols2 { columns: 1; } }
