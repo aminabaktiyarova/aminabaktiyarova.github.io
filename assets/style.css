@@ -399,6 +399,7 @@ table tr:last-child th, table tr:last-child td { padding-bottom: 0; }
 .prose h2 { margin: 46px 0 14px; }
 .prose > h2:first-child { margin-top: 0; }
 .prose p { margin: 0 0 18px; }
+.prose a, .top .meta a, .doc-link .meta a { border-bottom: 1.5px solid var(--burgundy); }
 .prose ul { list-style: none; margin: 0 0 18px; padding: 0; }
 .prose ul li { position: relative; padding-left: 24px; margin-bottom: 12px; line-height: 1.58; }
 .prose ul li::before {
