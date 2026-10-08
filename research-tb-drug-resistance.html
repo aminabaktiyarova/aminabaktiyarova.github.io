@@ -1,0 +1,73 @@
+---
+layout: default
+title: Bedaquiline and Clofazimine Resistance in Tuberculosis
+description: >-
+  An open resource measuring how mutations in Rv0678, pepQ and atpE shift bedaquiline and clofazimine MICs in Mycobacterium tuberculosis.
+nav: research
+permalink: /research/tb-drug-resistance/
+---
+  <div class="wrap top">
+    <h1>Bedaquiline and Clofazimine Resistance in Tuberculosis</h1>
+    <p class="meta">Amina Baktiyarova, Independent Researcher, ORCID <a href="https://orcid.org/0009-0007-6265-6493">0009-0007-6265-6493</a></p>
+  </div>
+
+  <div class="wrap">
+    <article class="prose">
+      <h2>The resource</h2>
+      <p>Bedaquiline and clofazimine are two of the drugs used to treat drug-resistant tuberculosis. In <i>Mycobacterium tuberculosis</i>, mutations in the genes <i>Rv0678</i> and <i>pepQ</i> are linked to resistance to both drugs, and mutations in <i>atpE</i> to resistance to bedaquiline. I built an open, versioned resource that measures how much each kind of mutation in these genes raises or lowers the minimum inhibitory concentration (MIC) of each drug. The MIC is the lowest drug concentration that stops the bacteria growing in a laboratory test.</p>
+      <p>Resistance catalogs grade each mutation as associated with resistance or not. This resource reports each effect as a shift in MIC, with an interval, and reports the resistant or susceptible call beside it. Shifts are given in doublings: a shift of one doubling means the bacteria need twice the drug concentration to stop growing, and a shift of 2.5 doublings means about 5.7 times the concentration.</p>
+
+      <h2>Data</h2>
+      <p>The resource is computed from the CRyPTIC Consortium Dataset, version 3.4.0 (<a href="https://doi.org/10.5281/zenodo.15680920">doi:10.5281/zenodo.15680920</a>), released under a Creative Commons Attribution 4.0 license. The analysis cohort is the 15,158 isolates that have both a whole genome sequence and MIC measurements. The work is computational.</p>
+
+      <h2>Method</h2>
+      <ul>
+        <li>Each isolate is assigned to a group from its mutations alone: no mutation in the three genes, a single mutation of a given class (substitution, frameshift, stop codon, gene deletion, in-frame insertion or deletion, or promoter change), or an uncertain call.</li>
+        <li>An MIC plate tests a series of doubling concentrations, so each reading is a range, and many readings fall below the lowest concentration on the plate. The MIC distribution of each group is estimated by a method that uses each reading as the range it is.</li>
+        <li>Isolates from one outbreak carry the same mutation and are not independent evidence. Isolates sharing a collection site, a sublineage and a mutation are grouped into one cluster, and the results report cluster counts beside isolate counts.</li>
+        <li>The isolates were split into an earlier half, collected before 2020, and a later half, collected afterwards and partly in other places. The main effect was measured on the earlier half, the expected result for the later half was published in the repository, and the later half was then analyzed and matched it.</li>
+      </ul>
+
+      <h2>Tested result</h2>
+      <p>Loss-of-function mutations in <i>Rv0678</i> raise the bedaquiline MIC. The earlier half gave a shift of 2.43 doublings, and the published expectation for the later half was a shift between 1.60 and 3.22 doublings. The later half showed 2.55 doublings, on 23 isolates in 19 clusters. A second prediction, on the odds of a resistant result, was also supported.</p>
+
+      <h2>Estimated results</h2>
+      <p>The following shifts are estimates from the earlier half with 95% intervals.</p>
+      <ul>
+        <li>Substitutions in <i>Rv0678</i> raise the bedaquiline MIC by 1.31 doublings (0.67 to 1.81) and the clofazimine MIC by 1.13 doublings (0.59 to 1.77).</li>
+        <li>Loss-of-function mutations in <i>Rv0678</i> raise the clofazimine MIC by 1.71 doublings (1.17 to 2.19).</li>
+        <li>Mutations in <i>pepQ</i> raise the bedaquiline MIC by 0.78 doublings (0.48 to 0.98) and the clofazimine MIC by 0.71 doublings (0.28 to 1.12).</li>
+        <li>Loss-of-function mutations raise the MIC of both drugs more than substitutions do.</li>
+      </ul>
+
+      <h2>Results a pass or fail grade does not show</h2>
+      <ul>
+        <li>One promoter change in <i>Rv0678</i>, c-11a, lowers the bedaquiline MIC by 1.81 doublings (1.54 to 2.30), on 74 isolates in 7 clusters. Promoter changes as a group, 83 isolates of which 74 carry c-11a, show no association with resistance (odds ratio 2.2, p = 0.38), so a catalog grading resistant or not reports nothing for them.</li>
+        <li>Mutations in <i>pepQ</i> raise the clofazimine MIC by 0.71 doublings, with an interval that excludes zero, while the resistance test on the earlier half falls short of significance (p = 0.051).</li>
+        <li>Loss-of-function mutations in <i>Rv0678</i> raise the clofazimine MIC in lineage 4 by 1.18 doublings, but the group's MICs stay below the resistance cut-off, so 2 of the 42 isolates are called resistant.</li>
+        <li>One <i>Rv0678</i> frameshift, 192_ins_g, is carried by 51 isolates, 41 of them from a single outbreak at one site. Counting isolates weights it about six times more than the 9 independent clusters support.</li>
+        <li>An <i>Rv0678</i> mutation found in only a minority of the sequencing reads is associated with a bedaquiline MIC shift of the same size as the same mutation found in every read. The source data report such minority mutations as susceptible.</li>
+      </ul>
+
+      <h2>Resistance the three genes do not explain</h2>
+      <p>In this cohort, 80 of the 171 bedaquiline-resistant isolates (46.8%, 95% interval 39.5 to 54.3) and 527 of the 683 clofazimine-resistant isolates (77.2%, 73.9 to 80.2) carry no protein-changing mutation present in most sequencing reads in <i>Rv0678</i>, <i>pepQ</i> or <i>atpE</i>. A test of ten further genes, fixed before it was run, found no gene-level association that accounts for them. On the same cohort, the WHO catalog of resistance mutations, version 2, detects 21.1% of bedaquiline-resistant isolates and 7.9% of clofazimine-resistant isolates, at about 99% specificity. A rule calling resistant any isolate with such a mutation in the three genes detects 34.5% and 15.2%, at about 96% specificity.</p>
+
+      <h2>Limitations</h2>
+      <ul>
+        <li>One collection site in the source data was enriched for bedaquiline resistance by design, so the percentages on this page describe the cohort and are not estimates for any patient population.</li>
+        <li>4 of the 217 distinct mutations in the cohort have enough independent evidence for a mutation-level shift. The other 213 are reported with their counts.</li>
+      </ul>
+    </article>
+
+    <div class="doc-link">
+      <h3>Data tables, version 1.0.0</h3>
+      <p class="meta">12 tables and 17 reports, published 6 October 2026, CC BY 4.0, <a href="https://doi.org/10.5281/zenodo.23194535">doi:10.5281/zenodo.23194535</a></p>
+      <a class="btn" href="https://doi.org/10.5281/zenodo.23194535">Open the data on Zenodo</a>
+    </div>
+
+    <div class="doc-link">
+      <h3>Software, version 0.1.0</h3>
+      <p class="meta">The pipeline that rebuilds the tables, published 6 October 2026, MIT license, <a href="https://doi.org/10.5281/zenodo.23196270">doi:10.5281/zenodo.23196270</a></p>
+      <a class="btn" href="https://github.com/aminabaktiyarova/bdq-cfz-mic-atlas">Open the repository on GitHub</a>
+    </div>
+  </div>
