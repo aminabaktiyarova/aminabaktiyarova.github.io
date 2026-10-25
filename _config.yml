@@ -21,17 +21,7 @@ telegram_direct: "https://t.me/aminabaktiyarova"
 youtube: "https://youtube.com/@aminabaktiyarova?si=dR4iLEDGILcNt_YR"
 email: "aminabaktiyarova.e@gmail.com"
 
-# Booking link. Tribute page for the general admissions consultation.
-booking_url: "https://web.tribute.tg/p/B1J"
-
-# ---------------------------------------------------------------------------
-# Digital product purchase links (Telegram Tribute)
-# ---------------------------------------------------------------------------
-tribute:
-  essay_toolkit: "https://web.tribute.tg/p/Bzc"
-  rec_letter_toolkit: "https://web.tribute.tg/p/Bz4"
-  bundle: "https://web.tribute.tg/p/Bze"
-  database_countries: "https://web.tribute.tg/p/BeT"
+# Shop items, prices and Tribute links live in _data/shop.yml.
 
 # ---------------------------------------------------------------------------
 # Build

@@ -2,274 +2,168 @@
 layout: default
 title: Shop
 description: >-
-  IELTS handbooks, admissions guides, tutoring, mentorship, and consultations.
+  IELTS consultations, 4-week IELTS packages, admissions mentorship, essay and writing reviews, handbooks and guides, with prices in euros and tenge.
 nav: shop
 permalink: /shop/
 ---
+{%- assign shop = site.data.shop -%}
   <div class="wrap top">
     <h1>Shop</h1>
-    <p class="lede">Here you can purchase valuable resources to study on your own, or book consultations with me.</p>
-    <p>Everything is paid through Telegram Tribute and arrives in Telegram straight after payment: files to download, booking links for anything with a call.</p>
+    <p class="lede">Consultations, tutoring, mentorship, reviews and self-study guides.</p>
+
+    <nav class="tracks" aria-label="Shop sections">
+      <a href="#ielts"><span class="t">IELTS</span><span class="d">First steps, 4-week packages, writing reviews, handbooks</span></a>
+      <a href="#admissions"><span class="t">Admissions</span><span class="d">Consultation, mentorship, essay reviews, guides</span></a>
+      <a href="#schools"><span class="t">Schools and companies</span><span class="d">Workshops, curriculum audits and design</span></a>
+    </nav>
+
+    <div class="pay">
+      <p><strong>In Kazakhstan</strong> Pay in tenge with Kaspi. Message me on <a href="{{ site.telegram_direct }}">Telegram</a> and I send the details.</p>
+      <p><strong>Outside Kazakhstan</strong> Pay in euros on Tribute, which adds its own service fee at checkout.</p>
+    </div>
   </div>
 
   <div class="wrap">
-    <div class="tagbar" id="tagbar"></div>
 
-    <section>
-      <h2>Handbooks</h2>
-      <ul class="cards">
-        <li data-tags="|IELTS|">
-          <p class="kicker">Handbook</p>
-          <h3>IELTS Listening</h3>
-          <ul class="spec">
-            <li>Ten core skills, from using the time before each section to getting back on track after you lose your place</li>
-            <li>A method for each of the thirteen question types and each of the four parts of the test</li>
-            <li>Seven patterns that make a wrong answer sound like the right one</li>
-            <li>The words and number formats candidates most often get wrong</li>
-            <li>Four practice sets with transcripts and fully explained answer keys</li>
-          </ul>
-          <div class="foot"><a class="btn" href="https://web.tribute.tg/p/CKB">Buy on Tribute</a></div>
-        </li>
-        <li data-tags="|IELTS|">
-          <p class="kicker">Handbook</p>
-          <h3>IELTS Academic Reading</h3>
-          <ul class="spec">
-            <li>Skimming, scanning, close reading, and spotting when a question has reworded the passage</li>
-            <li>A method for each of the thirteen question types, with its traps and worked examples</li>
-            <li>The qualifying words that decide True, False, and Not Given</li>
-            <li>Seven ways a wrong option is put together</li>
-            <li>Three practice passages with fully explained keys, and how to diagnose each mistake</li>
-          </ul>
-          <div class="foot"><a class="btn" href="https://web.tribute.tg/p/DnI">Buy on Tribute</a></div>
-        </li>
-        <li data-tags="|IELTS|">
-          <p class="kicker">Handbook</p>
-          <h3>IELTS Academic Writing</h3>
-          <ul class="spec">
-            <li>How your band is calculated, and what an examiner does when marking</li>
-            <li>A complete method for Task 1 Academic and all five Task 2 question types, with annotated model answers and an error clinic for each</li>
-            <li>Paraphrasing, turning verbs into nouns, and twelve structures that signal Band 7 and above</li>
-            <li>Forty informal to formal replacements, and the forty five most common accuracy mistakes</li>
-            <li>A six step proofreading routine, and practice banks for both tasks</li>
-          </ul>
-          <div class="foot"><a class="btn" href="https://web.tribute.tg/p/DnK">Buy on Tribute</a></div>
-        </li>
-        <li data-tags="|IELTS|">
-          <p class="kicker">Handbook</p>
-          <h3>IELTS Speaking</h3>
-          <ul class="spec">
-            <li>The four marking criteria as an examiner hears them, including what fluency means and which hesitations lose marks</li>
-            <li>A method for each part of the test, with annotated model answers at Band 6, 7 and 8</li>
-            <li>Seven ways to expand an answer so that it fills the full two minutes</li>
-            <li>Phrase and topic vocabulary banks, and a four week pronunciation programme</li>
-            <li>Sixty task cards, a Part 3 question bank, and three practice tests</li>
-          </ul>
-          <div class="foot"><a class="btn" href="https://web.tribute.tg/p/DnL">Buy on Tribute</a></div>
-        </li>
-        <li data-tags="|IELTS|">
-          <p class="kicker">Handbook</p>
-          <h3>IELTS Vocabulary and Grammar</h3>
-          <ul class="spec">
-            <li>The grammar and vocabulary the other four books assume you already have</li>
-            <li>A ten minute diagnostic that tells you how much of the grammar review you need</li>
-            <li>Band 8 structures: subordination, relative clauses, all five conditionals, participle clauses, inversion, and turning verbs into nouns</li>
-            <li>Forty academic words, topic vocabulary for twelve subject areas, and how words combine and build from a root</li>
-            <li>Easily confused words, words that look familiar but mean something else, and the mistakes Russian and Kazakh speakers make most often</li>
-          </ul>
-          <div class="foot"><a class="btn" href="https://web.tribute.tg/p/DnM">Buy on Tribute</a></div>
-        </li>
-      </ul>
-      <p class="aside">Free notes for all five IELTS skills are in <a href="{{ site.telegram_channel }}">my Telegram channel</a>.</p>
+    <section id="ielts" class="track">
+      <h2>IELTS</h2>
+
+      <div class="block">
+        <h3>Start here</h3>
+        <p class="intro">Every new IELTS student starts with one of these two.</p>
+        <ul class="pricelist">
+          {%- for o in shop.ielts_first %}
+          {% include shop-row.html item=o %}
+          {%- endfor %}
+        </ul>
+      </div>
+
+      <div class="block">
+        <h3>4-week packages</h3>
+        <p class="intro">Live online lessons of 1.5 hours. The first step tells you which package fits.</p>
+        <div class="plans">
+          {%- for p in shop.ielts_packages %}
+          <div class="plan">
+            <h4>{{ p.name }}</h4>
+            <p class="suits">{{ p.suits }}</p>
+            <dl>
+              <dt>Lessons</dt><dd>{{ p.lessons }}</dd>
+              <dt>Full mock tests</dt><dd>{{ p.mocks }}</dd>
+              <dt>Writing task reviews</dt><dd>{{ p.writing }}</dd>
+              <dt>Voice note feedback</dt><dd>{{ p.voice }}</dd>
+            </dl>
+            <p class="cost"><span class="eur">{{ p.eur }} EUR</span><span class="kzt">{{ p.kzt }} KZT</span></p>
+            <p class="act"><a class="btn" href="{% if p.tribute != '' %}{{ p.tribute }}{% else %}{{ site.telegram_direct }}{% endif %}">{% if p.tribute != '' %}Book on Tribute{% else %}Book on Telegram{% endif %}</a></p>
+          </div>
+          {%- endfor %}
+        </div>
+        <p class="after">Every package starts with an individual learning plan and includes my resources folder. Packages with lessons also include prepared slides and materials for every lesson, every mock test marked in all four sections with a feedback document, a weekly plan update, and the five IELTS handbooks.</p>
+      </div>
+
+      <div class="block">
+        <h3>Single review</h3>
+        <ul class="pricelist">
+          {%- for o in shop.ielts_reviews %}
+          {% include shop-row.html item=o %}
+          {%- endfor %}
+        </ul>
+      </div>
+
+      <div class="block">
+        <h3>Handbooks for self-study</h3>
+        <p class="intro">PDF files, sent straight after payment. Free notes for all five skills are in my <a href="{{ site.telegram_channel }}">Telegram channel</a>.</p>
+        <ul class="pricelist">
+          {%- for o in shop.ielts_books %}
+          {% include shop-row.html item=o verb="Buy" %}
+          {%- endfor %}
+        </ul>
+      </div>
     </section>
 
-    <section>
-      <h2>Guides and databases</h2>
-      <ul class="cards">
-        <li data-tags="|Admissions|Studies|">
-          <p class="kicker">Guide</p>
-          <h3>Essay Toolkit</h3>
-          <p>Forty eight pages for high schoolers applying to bachelor's programmes abroad. Why the American-style admissions essay is nothing like what you are taught to write at school, how to find a topic that is actually yours, how to draft and then cut, and how to handle supplements without repeating the main essay. Annotated examples and worksheets throughout.</p>
-          <div class="foot"><a class="btn" href="{{ site.tribute.essay_toolkit }}">Buy on Tribute</a></div>
-        </li>
-        <li data-tags="|Admissions|Studies|">
-          <p class="kicker">Guide</p>
-          <h3>Recommendation Letter Toolkit</h3>
-          <p>Thirty pages on the part of the application you do not write yourself. What to actually ask a teacher for and when to ask, what to hand them so the letter says something specific, how submission works, and what to do when the letter is written in Russian. Includes templates and a full example letter.</p>
-          <div class="foot"><a class="btn" href="{{ site.tribute.rec_letter_toolkit }}">Buy on Tribute</a></div>
-        </li>
-        <li data-tags="|Admissions|Studies|">
-          <p class="kicker">Bundle</p>
-          <h3>Both toolkits together</h3>
-          <p>The Essay Toolkit and the Recommendation Letter Toolkit in one purchase, covering both halves of the written application.</p>
-          <div class="foot"><a class="btn" href="{{ site.tribute.bundle }}">Buy on Tribute</a></div>
-        </li>
-        <li data-tags="|Admissions|Studies|">
-          <p class="kicker">Database</p>
-          <h3>Countries</h3>
-          <p>Fifty four study-abroad destinations, researched for Kazakhstani applicants specifically. For each one: how the education system is structured, what undergraduate admission requires, what graduate admission requires, which scholarships exist and who they are open to, how the financing works, and links to the official sources rather than to aggregator sites.</p>
-          <div class="foot"><a class="btn" href="{{ site.tribute.database_countries }}">Buy on Tribute</a></div>
-        </li>
-      </ul>
+    <section id="admissions" class="track">
+      <h2>Admissions</h2>
+
+      <div class="block">
+        <h3>Start here</h3>
+        <p class="intro">Every mentorship client starts with this consultation.</p>
+        <ul class="pricelist">
+          {%- for o in shop.admissions_first %}
+          {% include shop-row.html item=o %}
+          {%- endfor %}
+        </ul>
+      </div>
+
+      <div class="block">
+        <h3>Mentorship</h3>
+        <p class="intro">Support with applications to universities abroad, from the program list to the first weeks after you arrive.</p>
+        <div class="plans two">
+          {%- for p in shop.admissions_mentorship %}
+          <div class="plan">
+            <h4>{{ p.name }}</h4>
+            <p class="suits">{{ p.suits }}</p>
+            <dl>
+              <dt>Calls of 60 minutes</dt><dd>{{ p.calls }}</dd>
+              <dt>Written review</dt><dd>{{ p.review }}</dd>
+              <dt>Chat support</dt><dd>{{ p.chat }}</dd>
+            </dl>
+            <p class="cost"><span class="eur">{{ p.eur }} EUR</span><span class="kzt">{{ p.kzt }} KZT</span></p>
+            <p class="act"><a class="btn" href="{% if p.tribute != '' %}{{ p.tribute }}{% else %}{{ site.telegram_direct }}{% endif %}">{% if p.tribute != '' %}Book on Tribute{% else %}Book on Telegram{% endif %}</a></p>
+          </div>
+          {%- endfor %}
+        </div>
+        <ul class="covers">
+          <li><h4>Strategy</h4><p>Profile assessment, a shortlist of programs for your budget and grades, requirements checked against university sources, scholarships.</p></li>
+          <li><h4>Applications</h4><p>Essays and motivation letters over several rounds of edits, a CV, recommendation letters, interviews, application portals.</p></li>
+          <li><h4>Documents and exams</h4><p>A document list for each program, the order of translation, notarization and apostille, and language exam strategy.</p></li>
+          <li><h4>After an offer</h4><p>Offers compared by total cost, the visa steps and timeline, housing, and the first weeks after arrival.</p></li>
+        </ul>
+        <p class="after">Both lengths include a weekly plan, a roadmap to enrollment, a shared online portal for you and your parents, and the two toolkits below. What mentorship does not include is on the <a href="{{ '/abc/' | relative_url }}#expect">AB:C page</a>.</p>
+      </div>
+
+      <div class="block">
+        <h3>Single reviews</h3>
+        <ul class="pricelist">
+          {%- for o in shop.admissions_reviews %}
+          {% include shop-row.html item=o %}
+          {%- endfor %}
+        </ul>
+      </div>
+
+      <div class="block">
+        <h3>Guides for self-study</h3>
+        <ul class="pricelist">
+          {%- for o in shop.admissions_guides %}
+          {% include shop-row.html item=o verb="Buy" %}
+          {%- endfor %}
+        </ul>
+      </div>
     </section>
 
-    <section>
-      <h2>Consultations</h2>
-      <ul class="cards">
-        <li data-tags="|IELTS|">
-          <p class="kicker">Consultation</p>
-          <h3>IELTS diagnostic</h3>
-          <p>Sixty to ninety minutes on Google Meet, with nothing to prepare beforehand. We find where your band is actually being lost, which is rarely where candidates assume it is, and you get a written report afterwards setting out what to work on and in what order.</p>
-          <div class="foot"><a class="btn" href="https://t.me/tribute/app?startapp=pDnP">Book on Tribute</a></div>
+    <section id="schools" class="track">
+      <h2>Schools and companies</h2>
+      <p class="intro">For schools, language centers and education companies. Each quote is sent in writing, and work starts after payment.</p>
+      <ul class="pricelist">
+        {%- for o in shop.schools %}
+        <li>
+          <div class="what">
+            <h4>{{ o.name }}</h4>
+            <p>{{ o.text }}</p>
+          </div>
+          <p class="cost wide"><span class="eur">{{ o.price }}</span>{% if o.kzt != "" %}<span class="kzt">{{ o.kzt }}</span>{% endif %}</p>
         </li>
-        <li data-tags="|Admissions|Studies|">
-          <p class="kicker">Consultation</p>
-          <h3>Admissions</h3>
-          <p>Sixty to ninety minutes on Google Meet on where you are applying, what your profile currently looks like to an admissions reader, and what it needs before the deadline. A written summary follows. Every new mentorship client starts here.</p>
-          <div class="foot"><a class="btn" href="https://t.me/tribute/app?startapp=pDnQ">Book on Tribute</a></div>
-        </li>
+        {%- endfor %}
       </ul>
+      <p class="actions"><a class="btn" href="mailto:{{ site.email }}">Email me</a><a class="btn" href="{{ site.telegram_direct }}">Message on Telegram</a></p>
     </section>
 
-    <section>
-      <h2>IELTS tutoring</h2>
-      <ul class="cards">
-        <li data-tags="|IELTS|">
-          <p class="kicker">Tutoring</p>
-          <h3>Full support, monthly</h3>
-          <p>Four lessons a week, a supervised mock exam every week, daily voice notes, and two written works returned with marking against the criteria. Includes your own portal, where the plan, the exam tracker and the feedback all live.</p>
-          <div class="foot"><a class="btn" href="https://t.me/tribute/app?startapp=pAUl">Book on Tribute</a></div>
-        </li>
-        <li data-tags="|IELTS|">
-          <p class="kicker">Tutoring</p>
-          <h3>Full support, weekly</h3>
-          <p>The same format as the monthly package, paid one week at a time. For anyone who wants to start without committing to a month, or who is working to a deadline a few weeks away.</p>
-          <div class="foot"><a class="btn" href="https://t.me/tribute/app?startapp=pAUk">Book on Tribute</a></div>
-        </li>
-        <li data-tags="|IELTS|">
-          <p class="kicker">Tutoring</p>
-          <h3>Standard, monthly</h3>
-          <p>Two lessons a week, a mock exam with full review, daily voice notes, and one written work returned with marking each week.</p>
-          <div class="foot"><a class="btn" href="https://t.me/tribute/app?startapp=pBaO">Book on Tribute</a></div>
-        </li>
-        <li data-tags="|IELTS|">
-          <p class="kicker">Tutoring</p>
-          <h3>One skill, monthly</h3>
-          <p>One lesson a week on whichever skill is holding your overall band down, three written works reviewed a week, and a mock exam every second week. Raising your weakest criterion moves the average further than improving your strongest.</p>
-          <div class="foot"><a class="btn" href="https://t.me/tribute/app?startapp=pCVD">Book on Tribute</a></div>
-        </li>
+    <section id="sat" class="track">
+      <h3>SAT, AP and A-Level</h3>
+      <p class="intro">On request.</p>
+      <ul class="pricelist">
+        {%- for o in shop.other_first %}
+        {% include shop-row.html item=o %}
+        {%- endfor %}
       </ul>
     </section>
 
-    <section>
-      <h2>Mentorship</h2>
-      <ul class="cards">
-        <li data-tags="|Admissions|Studies|">
-          <p class="kicker">Mentorship</p>
-          <h3>Monthly</h3>
-          <p>Four weeks of the whole process: diagnosis and strategy, choosing programmes, building the profile, essays, submission, results, visa and move, and the first weeks after you arrive. Up to four calls a week, chat support throughout, a weekly plan against a long term roadmap, and a shared portal holding the programme list, the documents, the deadlines and the finances. Research mentorship is part of this, not priced separately.</p>
-          <div class="foot"><a class="btn" href="https://t.me/tribute/app?startapp=pANd">Book on Tribute</a></div>
-        </li>
-        <li data-tags="|Admissions|Studies|">
-          <p class="kicker">Mentorship</p>
-          <h3>Weekly</h3>
-          <p>The same work, one week at a time. Up to three calls, chat support all week, a weekly plan against the long term roadmap, and the portal. Renewed by your decision each week rather than automatically.</p>
-          <div class="foot"><a class="btn" href="https://t.me/tribute/app?startapp=pANb">Book on Tribute</a></div>
-        </li>
-      </ul>
-      <p class="aside">How mentorship runs week to week, and what is expected of you, is set out on the <a href="{{ '/abc/' | relative_url }}">AB:C page</a>.</p>
-    </section>
-
-    <p class="empty" id="empty" hidden>Nothing with that tag yet.</p>
   </div>
-
-  <div class="wrap">
-    <section id="on-request">
-      <h2>On request</h2>
-      <p>These have no booking link. Message me and we arrange them directly.</p>
-
-      <h3>Reviews</h3>
-      <ul class="plain">
-        <li><strong>Portfolio review.</strong> Your full application document set read as a set, with written feedback on how the pieces work together rather than on each one alone.</li>
-        <li><strong>Essay or document review.</strong> One personal statement, essay, supplemental, or motivation letter, returned with written comments.</li>
-        <li><strong>IELTS written work review.</strong> One writing task response marked against the four criteria, with Task 1 and Task 2 handled separately.</li>
-      </ul>
-
-      <h3>English, other formats</h3>
-      <ul class="plain">
-        <li><strong>Voice only.</strong> A daily voice note and review, six days a week, with no lessons and no mock exams. For speaking practice alongside something else.</li>
-      </ul>
-
-      <h3>SAT, AP, and A-Level</h3>
-      <ul class="plain">
-        <li><strong>Diagnostic.</strong> Sixty to ninety minutes, nothing to prepare, a written report afterwards. It decides whether you need skill-based or subject-content tutoring.</li>
-        <li><strong>Full support.</strong> Four lessons a week, a full-length timed practice test every week, reviewed homework, and the portal.</li>
-        <li><strong>Standard.</strong> Two lessons a week, a practice test with review, and the portal.</li>
-        <li><strong>Single section or subject.</strong> One lesson a week on the weak section or subject, with reviewed practice sets.</li>
-      </ul>
-      <p>Packages are scoped per subject, so two AP subjects means two diagnostics and two separate arrangements.</p>
-
-      <h3>For schools, centres, and companies</h3>
-      <ul class="plain">
-        <li><strong>Curriculum audit.</strong> A structured review of an existing IELTS prep or TESOL course programme, with a written findings and recommendations report.</li>
-        <li><strong>Curriculum design and coordination.</strong> Project-based support building or restructuring a course or programme.</li>
-        <li><strong>Workshops and webinars.</strong> Single-session training for staff or students.</li>
-        <li><strong>Partnerships.</strong> Referral, co-branded content, or ongoing collaboration with centres or private schools.</li>
-      </ul>
-
-      <h3>Getting in touch</h3>
-      <table>
-        <tbody>
-          <tr><th scope="row">Telegram</th><td><a href="{{ site.telegram_direct }}">Message me directly</a></td></tr>
-          <tr><th scope="row">Email</th><td><a href="mailto:{{ site.email }}">{{ site.email }}</a></td></tr>
-          <tr><th scope="row">Hours</th><td>13:00 to 20:00, Astana time, Monday to Friday. Sunday is a full day off.</td></tr>
-        </tbody>
-      </table>
-    </section>
-  </div>
-
-<script>
-(function () {
-  const items = Array.from(document.querySelectorAll('.cards > li'));
-  const sections = Array.from(document.querySelectorAll('.cards')).map(ul => ul.closest('section'));
-  const bar = document.getElementById('tagbar');
-  const empty = document.getElementById('empty');
-  const tags = [...new Set(items.flatMap(li => li.dataset.tags.split('|').filter(Boolean)))].sort();
-
-  function button(label, value, on) {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'tag' + (on ? ' on' : '');
-    b.dataset.tag = value;
-    b.textContent = label;
-    return b;
-  }
-
-  bar.appendChild(button('Everything', '', true));
-  tags.forEach(t => bar.appendChild(button(t, t, false)));
-
-  function apply(tag) {
-    let shown = 0;
-    items.forEach(li => {
-      const hit = !tag || li.dataset.tags.includes('|' + tag + '|');
-      li.hidden = !hit;
-      if (hit) shown++;
-    });
-    sections.forEach(s => { s.hidden = !s.querySelectorAll('.cards > li:not([hidden])').length; });
-    empty.hidden = shown > 0;
-    bar.querySelectorAll('.tag').forEach(b => b.classList.toggle('on', (b.dataset.tag || '') === tag));
-    try {
-      if (tag) { history.replaceState(null, '', '#' + encodeURIComponent(tag)); }
-      else { history.replaceState(null, '', location.pathname); }
-    } catch (e) { /* blocked in sandboxed previews */ }
-  }
-
-  document.addEventListener('click', function (e) {
-    const btn = e.target.closest('.tagbar .tag');
-    if (!btn) return;
-    apply(btn.dataset.tag || '');
-  });
-
-  const start = decodeURIComponent(location.hash.replace('#', ''));
-  if (start && tags.includes(start)) apply(start);
-})();
-</script>

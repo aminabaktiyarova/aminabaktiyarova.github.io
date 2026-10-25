@@ -1,0 +1,216 @@
+# ---------------------------------------------------------------------------
+# Everything sold on the Shop page: names, prices, descriptions and links.
+#
+# eur: the price in euros, paid on Tribute by buyers outside Kazakhstan.
+# kzt: the price in tenge, paid with Kaspi by buyers in Kazakhstan.
+# tribute: the Tribute link. When it is empty, the button opens a Telegram
+#   chat with Amina instead. Products use web.tribute.tg links; services use
+#   t.me/tribute links, which open Tribute inside Telegram.
+# ---------------------------------------------------------------------------
+
+ielts_first:
+  - name: IELTS diagnostic consultation
+    text: For students new to IELTS. A 90-minute call working through beginner tasks out loud, then notes and a rough plan by the end of the next working day.
+    eur: "33"
+    kzt: "17,000"
+    tribute: "https://t.me/tribute/app?startapp=pI9z"
+  - name: IELTS mock test analysis
+    text: For students who know the format. A full Academic mock test taken at home, then results for each section and a study plan by the end of the next working day.
+    eur: "40"
+    kzt: "20,500"
+    tribute: "https://t.me/tribute/app?startapp=pI9C"
+
+ielts_packages:
+  - name: Intensive
+    suits: A gap of 1.0 band or more, or an exam within 8 weeks
+    lessons: 16, four a week
+    mocks: 8, two a week
+    writing: None
+    voice: None
+    eur: "700"
+    kzt: "357,000"
+    tribute: "https://t.me/tribute/app?startapp=pI9K"
+  - name: Standard
+    suits: A gap of 0.5 band, with the exam 8 or more weeks away
+    lessons: 8, two a week
+    mocks: 8, two a week
+    writing: "4"
+    voice: Up to 6 a week
+    eur: "530"
+    kzt: "270,500"
+    tribute: "https://t.me/tribute/app?startapp=pI9N"
+  - name: One Skill
+    suits: One skill 1.0 band or more below the other three
+    lessons: 4, one a week
+    mocks: 2, one every two weeks
+    writing: 12, three a week
+    voice: None
+    eur: "280"
+    kzt: "143,000"
+    tribute: "https://t.me/tribute/app?startapp=pI9W"
+  - name: Voice Only
+    suits: Speaking practice alongside another course
+    lessons: None
+    mocks: None
+    writing: None
+    voice: Up to 6 a week
+    eur: "40"
+    kzt: "20,500"
+    tribute: "https://t.me/tribute/app?startapp=pIa0"
+
+ielts_reviews:
+  - name: IELTS writing task review
+    text: One Task 1 or Task 2 response marked against the four IELTS criteria, with written comments, within 2 working days.
+    eur: "10"
+    kzt: "5,500"
+    tribute: "https://t.me/tribute/app?startapp=pIa5"
+
+ielts_books:
+  - name: IELTS Listening handbook
+    text: A method for each of the thirteen question types, the traps, and four practice sets with explained keys.
+    eur: "15"
+    kzt: "8,000"
+    tribute: "https://web.tribute.tg/p/I7g"
+    inside:
+      - Ten core skills, from using the time before each section to getting back on track after you lose your place
+      - A method for each of the thirteen question types and each of the four parts of the test
+      - Seven patterns that make a wrong answer sound like the right one
+      - The words and number formats candidates most often get wrong
+      - Four practice sets with transcripts and fully explained answer keys
+  - name: IELTS Academic Reading handbook
+    text: Skimming, scanning and close reading, a method for each question type, and three practice passages.
+    eur: "15"
+    kzt: "8,000"
+    tribute: "https://web.tribute.tg/p/I7m"
+    inside:
+      - Skimming, scanning, close reading, and spotting when a question has reworded the passage
+      - A method for each of the thirteen question types with its traps, and worked examples for multiple choice, True, False, Not Given, and matching headings
+      - The qualifying words that decide True, False and Not Given
+      - Seven ways a wrong option is put together
+      - Three practice passages with fully explained keys, and how to diagnose each mistake
+  - name: IELTS Academic Writing handbook
+    text: How the band is calculated, a method for Task 1 and all five Task 2 types, and annotated model answers.
+    eur: "15"
+    kzt: "8,000"
+    tribute: "https://web.tribute.tg/p/I7o"
+    inside:
+      - How your band is calculated, and what an examiner does when marking
+      - A complete method for Task 1 Academic and all five Task 2 question types, with annotated model answers, and an error clinic for each task
+      - Paraphrasing, turning verbs into nouns, and twelve structures that signal Band 7 and above
+      - Forty informal-to-formal replacements, and the forty-five most common accuracy mistakes
+      - A six-step proofreading routine, and practice banks for both tasks
+  - name: IELTS Speaking handbook
+    text: The four criteria as an examiner hears them, model answers at Band 6, 7 and 8, and sixty task cards.
+    eur: "15"
+    kzt: "8,000"
+    tribute: "https://web.tribute.tg/p/I7p"
+    inside:
+      - The four marking criteria as an examiner hears them, including what fluency means and which hesitations lose marks
+      - A method for each part of the test, with annotated model answers at Band 6, 7 and 8
+      - Seven ways to expand an answer so that it fills the full two minutes
+      - Phrase and topic vocabulary banks, and a four-week pronunciation program
+      - Sixty task cards, a Part 3 question bank and three practice tests
+  - name: IELTS Vocabulary and Grammar handbook
+    text: The grammar and vocabulary the other four handbooks assume, starting with a ten-minute diagnostic.
+    eur: "15"
+    kzt: "8,000"
+    tribute: "https://web.tribute.tg/p/I7s"
+    inside:
+      - The grammar and vocabulary the other four handbooks assume you already have
+      - A ten-minute diagnostic that shows how much of the grammar review you need
+      - "Band 8 structures: subordination, relative clauses, all five conditionals, participle clauses, inversion, and turning verbs into nouns"
+      - Forty-one academic words, topic vocabulary for twelve subject areas, and how words combine and build from a root
+      - Easily confused words, words that look familiar but mean something else, and the mistakes Russian and Kazakh speakers make most often
+admissions_first:
+  - name: Admissions consultation
+    text: A 90-minute call on where you want to apply, how your profile reads to an admissions committee, budget, funding and timeline. A written summary with next steps follows by the end of the next working day.
+    eur: "38"
+    kzt: "19,500"
+    tribute: "https://t.me/tribute/app?startapp=pI9E"
+
+admissions_mentorship:
+  - name: 4 weeks
+    suits: Ongoing support, renewed every 4 weeks
+    calls: Up to 8, booked when needed
+    review: Up to 8 hours
+    chat: Tuesday to Saturday
+    eur: "300"
+    kzt: "153,000"
+    tribute: "https://t.me/tribute/app?startapp=pIaa"
+  - name: 1 week
+    suits: A deadline week, a single task, or a first week before committing to a month
+    calls: Up to 2
+    review: Up to 2 hours
+    chat: Tuesday to Saturday
+    eur: "75"
+    kzt: "38,500"
+    tribute: "https://t.me/tribute/app?startapp=pIab"
+
+admissions_reviews:
+  - name: Essay or document review
+    text: One essay, personal statement, supplemental essay or motivation letter of up to 1,000 words, with one round of written comments, within 2 working days.
+    eur: "15"
+    kzt: "8,000"
+    tribute: "https://t.me/tribute/app?startapp=pIa7"
+  - name: Application set review
+    text: Up to 5 application documents read together, with feedback on each and on how they work as a set, within 3 working days.
+    eur: "50"
+    kzt: "25,500"
+    tribute: "https://t.me/tribute/app?startapp=pIa8"
+
+admissions_guides:
+  - name: Essay Toolkit
+    text: 43 pages for high school students applying to bachelor's programs abroad, with annotated examples and worksheets.
+    eur: "15"
+    kzt: "8,000"
+    tribute: "https://web.tribute.tg/p/I7D"
+    inside:
+      - How the American-style admissions essay differs from school essays
+      - How to find a topic of your own
+      - How to draft and then cut
+      - How to answer supplemental prompts without repeating the main essay
+  - name: Recommendation Letter Toolkit
+    text: 30 pages on the part of the application your teachers write, with templates and a full example letter.
+    eur: "15"
+    kzt: "8,000"
+    tribute: "https://web.tribute.tg/p/I7E"
+    inside:
+      - What to ask a teacher for, and when
+      - What to give them so the letter says something specific
+      - How submission works
+      - What to do when the letter is written in Russian
+  - name: Common App and CSS Profile Guide
+    text: Every section of the Common App and the CSS Profile for students in Kazakhstan at NIS, NIS IB and regular schools, checked for the 2026-27 cycle.
+    eur: "11"
+    kzt: "6,000"
+    tribute: "https://web.tribute.tg/p/GCy"
+    inside:
+      - How to map Kazakhstan's 11-year system to US grades 9 to 12
+      - What to enter for marks, GPA and class rank, without converting to a 4.0 scale
+      - Activities and honors within the character limits, with a before-and-after example
+      - The CSS Profile for families in Kazakhstan, including parents' tax return status and IDOC documents
+
+schools:
+  - name: Workshop or webinar
+    text: One session for staff or students, on IELTS or admissions.
+    price: 50 EUR per session hour
+    kzt: 25,500 KZT per session hour
+  - name: Curriculum audit
+    text: A review of one IELTS preparation or TESOL course program, with a written report.
+    price: From 245 EUR
+    kzt: From 125,000 KZT
+  - name: Curriculum design or coordination
+    text: Building or restructuring a course or program, estimated after a scoping call.
+    price: 15 to 20 EUR per hour
+    kzt: 8,000 to 10,500 KZT per hour
+  - name: Partnerships
+    text: Referrals, co-branded content or ongoing collaboration.
+    price: Agreed individually
+    kzt: ""
+
+other_first:
+  - name: SAT, AP or A-Level diagnostic
+    text: A 90-minute call and a written report, one per subject. Tutoring after it is quoted per subject.
+    eur: "33"
+    kzt: "17,000"
+    tribute: ""

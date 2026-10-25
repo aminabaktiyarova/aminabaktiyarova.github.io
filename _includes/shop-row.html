@@ -1,0 +1,25 @@
+{%- assign o = include.item -%}
+<li>
+  <div class="what">
+    <h4>{{ o.name }}</h4>
+    <p>{{ o.text }}</p>
+    {%- if o.inside %}
+    <details>
+      <summary>What is inside</summary>
+      <ul>
+        {%- for line in o.inside %}
+        <li>{{ line }}</li>
+        {%- endfor %}
+      </ul>
+    </details>
+    {%- endif %}
+  </div>
+  <p class="cost"><span class="eur">{{ o.eur }} EUR</span><span class="kzt">{{ o.kzt }} KZT</span></p>
+  <p class="act">
+    {%- if o.tribute and o.tribute != "" -%}
+    <a class="btn" href="{{ o.tribute }}">{{ include.verb | default: "Book" }} on Tribute</a>
+    {%- else -%}
+    <a class="btn" href="{{ site.telegram_direct }}">{{ include.verb | default: "Book" }} on Telegram</a>
+    {%- endif -%}
+  </p>
+</li>
