@@ -8,7 +8,7 @@ description: >-
   university application.
 ---
 
-In grade 10 I spent most of a school year on a chemistry project about removing textile dyes from wastewater, and in 2019 it won a second-degree diploma at an international student research competition. In 2026 I reread that paper against the standards of peer-reviewed water treatment journals and found that it lacked most of what a publishable study reports. Since 2021 I have mentored applicants from Kazakhstan and Central Asia who apply to universities abroad.
+In grade 10 I spent most of a school year on a chemistry project about removing textile dyes from wastewater, and in 2019 it won a second-degree diploma at an international student research competition. In 2026 I reread that paper against the standards of peer-reviewed water treatment journals and found that it lacked most of what a publishable study reports. I have mentored applicants from Kazakhstan and Central Asia since 2021, and this post is written for students like them who are considering a research project before applying to universities abroad.
 
 ## My first project
 
