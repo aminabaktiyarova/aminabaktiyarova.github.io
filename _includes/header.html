@@ -1,14 +1,24 @@
+{%- if ru -%}
+  {%- assign p = "/ru" -%}
+{%- else -%}
+  {%- assign p = "" -%}
+{%- endif -%}
 <header>
   <div class="wrap bar">
-    <a class="mark" href="{{ '/' | relative_url }}">Amina Baktiyarova<span>.</span></a>
-    <nav aria-label="Main">
-      <a href="{{ '/' | relative_url }}"{% if page.nav == 'about' %} aria-current="page"{% endif %}>About</a>
-      <a href="{{ '/research/' | relative_url }}"{% if page.nav == 'research' %} aria-current="page"{% endif %}>Research</a>
-      <a href="{{ '/blog/' | relative_url }}"{% if page.nav == 'blog' %} aria-current="page"{% endif %}>Blog</a>
-      <a href="{{ '/shop/' | relative_url }}"{% if page.nav == 'shop' %} aria-current="page"{% endif %}>Shop</a>
-      <a href="{{ '/abc/' | relative_url }}"{% if page.nav == 'abc' %} aria-current="page"{% endif %}>AB:C</a>
-      <a href="{{ '/abe/' | relative_url }}"{% if page.nav == 'abe' %} aria-current="page"{% endif %}>AB:E</a>
-      <a href="{{ '/contact/' | relative_url }}"{% if page.nav == 'contact' %} aria-current="page"{% endif %}>Contact</a>
+    <a class="mark" href="{{ p | append: '/' | relative_url }}">Amina Baktiyarova<span>.</span></a>
+    <nav aria-label="{% if ru %}Меню{% else %}Main{% endif %}">
+      <a href="{{ p | append: '/' | relative_url }}"{% if page.nav == 'about' %} aria-current="page"{% endif %}>{% if ru %}Обо мне{% else %}About{% endif %}</a>
+      <a href="{{ p | append: '/research/' | relative_url }}"{% if page.nav == 'research' %} aria-current="page"{% endif %}>{% if ru %}Исследования{% else %}Research{% endif %}</a>
+      <a href="{{ p | append: '/blog/' | relative_url }}"{% if page.nav == 'blog' %} aria-current="page"{% endif %}>{% if ru %}Блог{% else %}Blog{% endif %}</a>
+      <a href="{{ p | append: '/shop/' | relative_url }}"{% if page.nav == 'shop' %} aria-current="page"{% endif %}>Shop</a>
+      <a href="{{ p | append: '/abc/' | relative_url }}"{% if page.nav == 'abc' %} aria-current="page"{% endif %}>AB:C</a>
+      <a href="{{ p | append: '/abe/' | relative_url }}"{% if page.nav == 'abe' %} aria-current="page"{% endif %}>AB:E</a>
+      <a href="{{ p | append: '/contact/' | relative_url }}"{% if page.nav == 'contact' %} aria-current="page"{% endif %}>{% if ru %}Контакты{% else %}Contact{% endif %}</a>
+      {% if ru -%}
+      <a class="lang" href="{{ alt_url | relative_url }}" hreflang="en" lang="en" aria-label="English version">EN</a>
+      {%- else -%}
+      <a class="lang" href="{{ alt_url | relative_url }}" hreflang="ru" lang="ru" aria-label="Русская версия">RU</a>
+      {%- endif %}
     </nav>
   </div>
 </header>

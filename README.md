@@ -30,3 +30,12 @@ page updates.
 ## Photos
 
 `assets/photos/`. The row on the About page shows them in filename order.
+
+## Russian version
+
+The Russian pages are in `ru/` and open at `/ru/`. Each one has the address of
+its English page with `/ru` in front, and the RU and EN link in the header
+switches between the two. Russian Shop text is in the `_ru` fields of
+`_data/shop.yml`; item names and prices are shared with the English Shop. A
+change to an English page needs the same change in its `ru/` file. Blog posts
+are in English only and are listed on `/ru/blog/`.

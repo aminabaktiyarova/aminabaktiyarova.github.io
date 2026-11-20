@@ -1,0 +1,24 @@
+{%- comment -%}
+  Russian pages live in ru/ and set lang: ru. Each one has the address of its
+  English page with /ru in front. The language link goes to the same page in
+  the other language, or to the start page when there is none.
+{%- endcomment -%}
+{%- if page.lang == "ru" -%}
+  {%- assign ru = true -%}
+  {%- assign alt_lang = "en" -%}
+  {%- assign alt_url = page.url | remove_first: "/ru" -%}
+{%- else -%}
+  {%- assign ru = false -%}
+  {%- assign alt_lang = "ru" -%}
+  {%- assign alt_url = page.url | prepend: "/ru" -%}
+{%- endif -%}
+{%- assign alt_page = site.pages | where: "url", alt_url | first -%}
+{%- unless alt_page -%}
+  {%- if ru -%}
+    {%- assign alt_url = "/" -%}
+  {%- elsif page.collection == "posts" -%}
+    {%- assign alt_url = "/ru/blog/" -%}
+  {%- else -%}
+    {%- assign alt_url = "/ru/" -%}
+  {%- endif -%}
+{%- endunless -%}

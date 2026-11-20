@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+{%- include lang.html %}
+<html lang="{% if ru %}ru{% else %}en{% endif %}">
 <head>
   {% include head.html %}
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">{% if ru %}Перейти к содержанию{% else %}Skip to content{% endif %}</a>
 {% include header.html %}
 <main id="main">
   {{ content }}

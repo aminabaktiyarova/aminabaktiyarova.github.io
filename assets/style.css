@@ -1,6 +1,7 @@
 /* ===========================================================================
    Amina Baktiyarova
-   Newsreader for reading text, Inter for navigation and labels.
+   Newsreader for reading text (EB Garamond on Russian pages), Inter for
+   navigation and labels.
    =========================================================================== */
 
 :root {
@@ -35,6 +36,9 @@ body {
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Newsreader has no Cyrillic, so the Russian pages use EB Garamond. */
+html[lang="ru"] body { font-family: "EB Garamond", Georgia, "Times New Roman", serif; }
 
 .wrap {
   max-width: var(--shell);
@@ -101,6 +105,7 @@ header nav a {
 }
 header nav a:hover { border-bottom-color: var(--burgundy); }
 header nav a[aria-current] { color: var(--navy); border-bottom-color: var(--burgundy); }
+header nav a.lang { color: var(--muted); }
 
 /* --------------------------------------------------------------- page head */
 
@@ -154,12 +159,13 @@ section > p:last-child { margin-bottom: 0; }
 .photos img { display: block; height: auto; }
 
 /* Widths are each photograph's share of the combined aspect ratio
-   (1.5000 + 1.2142 + 1.4988 + 0.7500 = 4.9630), so every photograph in the
-   row ends up the same height with nothing cropped. */
-.photos img:nth-child(1) { width: calc((100% - 48px) * 0.302237); }
-.photos img:nth-child(2) { width: calc((100% - 48px) * 0.244650); }
-.photos img:nth-child(3) { width: calc((100% - 48px) * 0.301995); }
-.photos img:nth-child(4) { width: calc((100% - 48px) * 0.151118); }
+   (1.5000 + 1.2142 + 1.3049 + 1.4988 + 0.7500 = 6.2679), so every photograph
+   in the row ends up the same height with nothing cropped. */
+.photos img:nth-child(1) { width: calc((100% - 64px) * 0.239315); }
+.photos img:nth-child(2) { width: calc((100% - 64px) * 0.193719); }
+.photos img:nth-child(3) { width: calc((100% - 64px) * 0.208181); }
+.photos img:nth-child(4) { width: calc((100% - 64px) * 0.239128); }
+.photos img:nth-child(5) { width: calc((100% - 64px) * 0.119657); }
 
 /* ------------------------------------------------------------- simple lists */
 
@@ -371,9 +377,10 @@ footer p { margin: 0; }
 
   .photos { gap: 12px; margin-bottom: 64px; }
   .photos img:nth-child(1) { width: calc((100% - 12px) * 0.50020); order: 1; }
-  .photos img:nth-child(3) { width: calc((100% - 12px) * 0.49980); order: 2; }
-  .photos img:nth-child(2) { width: calc((100% - 12px) * 0.61817); order: 3; }
-  .photos img:nth-child(4) { width: calc((100% - 12px) * 0.38183); order: 4; }
+  .photos img:nth-child(4) { width: calc((100% - 12px) * 0.49980); order: 2; }
+  .photos img:nth-child(2) { width: calc((100% - 24px) * 0.371424); order: 3; }
+  .photos img:nth-child(3) { width: calc((100% - 24px) * 0.399152); order: 4; }
+  .photos img:nth-child(5) { width: calc((100% - 24px) * 0.229423); order: 5; }
 
   .doc-link { padding-left: 22px; }
 
@@ -490,6 +497,10 @@ h4 {
   padding: 20px 0;
   border-bottom: 1px solid var(--rule);
 }
+@media (min-width: 700px) {
+  html[lang="ru"] .pricelist > li { grid-template-columns: minmax(0, 1fr) 132px 212px; }
+}
+html[lang="ru"] .plan .btn { white-space: normal; padding-inline: 12px; }
 .pricelist .what p { margin: 0; font-size: 17px; line-height: 1.5; max-width: 580px; }
 
 .cost {

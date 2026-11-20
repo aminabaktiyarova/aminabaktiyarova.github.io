@@ -1,25 +1,40 @@
 {%- assign o = include.item -%}
+{%- if page.lang == "ru" -%}
+  {%- assign text = o.text_ru | default: o.text -%}
+  {%- assign inside = o.inside_ru | default: o.inside -%}
+  {%- assign kzt = o.kzt | replace: ",", "&nbsp;" -%}
+  {%- assign verb = include.verb | default: "Записаться" -%}
+  {%- assign via = " в " -%}
+  {%- assign inside_label = "Что внутри" -%}
+{%- else -%}
+  {%- assign text = o.text -%}
+  {%- assign inside = o.inside -%}
+  {%- assign kzt = o.kzt -%}
+  {%- assign verb = include.verb | default: "Book" -%}
+  {%- assign via = " on " -%}
+  {%- assign inside_label = "What is inside" -%}
+{%- endif -%}
 <li>
   <div class="what">
     <h4>{{ o.name }}</h4>
-    <p>{{ o.text }}</p>
-    {%- if o.inside %}
+    <p>{{ text }}</p>
+    {%- if inside %}
     <details>
-      <summary>What is inside</summary>
+      <summary>{{ inside_label }}</summary>
       <ul>
-        {%- for line in o.inside %}
+        {%- for line in inside %}
         <li>{{ line }}</li>
         {%- endfor %}
       </ul>
     </details>
     {%- endif %}
   </div>
-  <p class="cost"><span class="eur">{{ o.eur }} EUR</span><span class="kzt">{{ o.kzt }} KZT</span></p>
+  <p class="cost"><span class="eur">{{ o.eur }} EUR</span><span class="kzt">{{ kzt }} KZT</span></p>
   <p class="act">
     {%- if o.tribute and o.tribute != "" -%}
-    <a class="btn" href="{{ o.tribute }}">{{ include.verb | default: "Book" }} on Tribute</a>
+    <a class="btn" href="{{ o.tribute }}">{{ verb }}{{ via }}Tribute</a>
     {%- else -%}
-    <a class="btn" href="{{ site.telegram_direct }}">{{ include.verb | default: "Book" }} on Telegram</a>
+    <a class="btn" href="{{ site.telegram_direct }}">{{ verb }}{{ via }}Telegram</a>
     {%- endif -%}
   </p>
 </li>

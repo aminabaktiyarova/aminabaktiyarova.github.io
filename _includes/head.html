@@ -4,7 +4,15 @@
 <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{%- if ru %}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=EB+Garamond:ital,wght@0,400..650;1,400..500&display=swap" rel="stylesheet">
+{%- else %}
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400..650;1,6..72,400..500&display=swap" rel="stylesheet">
+{%- endif %}
 <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+{%- if alt_page %}
+<link rel="alternate" hreflang="{% if ru %}ru{% else %}en{% endif %}" href="{{ page.url | absolute_url }}">
+<link rel="alternate" hreflang="{{ alt_lang }}" href="{{ alt_url | absolute_url }}">
+{%- endif %}
 {% seo %}
 {% feed_meta %}

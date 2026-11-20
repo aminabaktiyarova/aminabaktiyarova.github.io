@@ -6,16 +6,20 @@
 # tribute: the Tribute link. When it is empty, the button opens a Telegram
 #   chat with Amina instead. Products use web.tribute.tg links; services use
 #   t.me/tribute links, which open Tribute inside Telegram.
+# Fields ending in _ru hold the same text for the Russian Shop page (/ru/shop/).
+#   Names stay in English on both pages. Prices are shared.
 # ---------------------------------------------------------------------------
 
 ielts_first:
   - name: IELTS diagnostic consultation
     text: For students new to IELTS. A 90-minute call working through beginner tasks out loud, then notes and a rough plan by the end of the next working day.
+    text_ru: Для тех, кто только знакомится с IELTS. Звонок на 90 минут, на котором мы вслух разбираем задания начального уровня, затем заметки и примерный план к концу следующего рабочего дня.
     eur: "33"
     kzt: "17,000"
     tribute: "https://t.me/tribute/app?startapp=pI9z"
   - name: IELTS mock test analysis
     text: For students who know the format. A full Academic mock test taken at home, then results for each section and a study plan by the end of the next working day.
+    text_ru: Для тех, кто уже знает формат. Полный Academic mock test, который вы проходите дома, затем результаты по каждой секции и план подготовки к концу следующего рабочего дня.
     eur: "40"
     kzt: "20,500"
     tribute: "https://t.me/tribute/app?startapp=pI9C"
@@ -27,6 +31,11 @@ ielts_packages:
     mocks: 8, two a week
     writing: None
     voice: None
+    suits_ru: Нужно поднять балл на 1,0 и больше, или экзамен в ближайшие 8 недель
+    lessons_ru: 16, по четыре в неделю
+    mocks_ru: 8, по два в неделю
+    writing_ru: Нет
+    voice_ru: Нет
     eur: "700"
     kzt: "357,000"
     tribute: "https://t.me/tribute/app?startapp=pI9K"
@@ -36,6 +45,11 @@ ielts_packages:
     mocks: 8, two a week
     writing: "4"
     voice: Up to 6 a week
+    suits_ru: Нужно поднять балл на 0,5, экзамен не раньше чем через 8 недель
+    lessons_ru: 8, по два в неделю
+    mocks_ru: 8, по два в неделю
+    writing_ru: "4"
+    voice_ru: До 6 в неделю
     eur: "530"
     kzt: "270,500"
     tribute: "https://t.me/tribute/app?startapp=pI9N"
@@ -45,6 +59,11 @@ ielts_packages:
     mocks: 2, one every two weeks
     writing: 12, three a week
     voice: None
+    suits_ru: Нужно поднять один навык на 1,0 балла и больше, до уровня трех остальных
+    lessons_ru: 4, по одному в неделю
+    mocks_ru: 2, раз в две недели
+    writing_ru: 12, по три в неделю
+    voice_ru: Нет
     eur: "280"
     kzt: "143,000"
     tribute: "https://t.me/tribute/app?startapp=pI9W"
@@ -54,6 +73,11 @@ ielts_packages:
     mocks: None
     writing: None
     voice: Up to 6 a week
+    suits_ru: Практика Speaking параллельно с другой программой
+    lessons_ru: Нет
+    mocks_ru: Нет
+    writing_ru: Нет
+    voice_ru: До 6 в неделю
     eur: "40"
     kzt: "20,500"
     tribute: "https://t.me/tribute/app?startapp=pIa0"
@@ -61,6 +85,7 @@ ielts_packages:
 ielts_reviews:
   - name: IELTS writing task review
     text: One Task 1 or Task 2 response marked against the four IELTS criteria, with written comments, within 2 working days.
+    text_ru: Один ответ на Task 1 или Task 2, оцененный по четырем критериям IELTS, с письменными комментариями, в течение 2 рабочих дней.
     eur: "10"
     kzt: "5,500"
     tribute: "https://t.me/tribute/app?startapp=pIa5"
@@ -68,6 +93,7 @@ ielts_reviews:
 ielts_books:
   - name: IELTS Listening handbook
     text: A method for each of the thirteen question types, the traps, and four practice sets with explained keys.
+    text_ru: Метод для каждого из тринадцати типов вопросов, ловушки и четыре тренировочных набора с объясненными ключами.
     eur: "15"
     kzt: "8,000"
     tribute: "https://web.tribute.tg/p/I7g"
@@ -77,8 +103,15 @@ ielts_books:
       - Seven patterns that make a wrong answer sound like the right one
       - The words and number formats candidates most often get wrong
       - Four practice sets with transcripts and fully explained answer keys
+    inside_ru:
+      - Десять основных навыков, от использования времени перед каждой секцией до того, как продолжить, если вы сбились
+      - Метод для каждого из тринадцати типов вопросов и для каждой из четырех частей теста
+      - Семь приемов, из-за которых неверный ответ звучит как правильный
+      - Слова и форматы чисел, в которых кандидаты ошибаются чаще всего
+      - Четыре тренировочных набора с транскриптами и подробно объясненными ключами
   - name: IELTS Academic Reading handbook
     text: Skimming, scanning and close reading, a method for each question type, and three practice passages.
+    text_ru: Skimming, scanning и close reading, метод для каждого типа вопросов и три тренировочных текста.
     eur: "15"
     kzt: "8,000"
     tribute: "https://web.tribute.tg/p/I7m"
@@ -88,8 +121,15 @@ ielts_books:
       - The qualifying words that decide True, False and Not Given
       - Seven ways a wrong option is put together
       - Three practice passages with fully explained keys, and how to diagnose each mistake
+    inside_ru:
+      - Skimming, scanning, close reading и как заметить, что вопрос перефразирует текст
+      - Метод для каждого из тринадцати типов вопросов с его ловушками и разобранные примеры для multiple choice, True, False, Not Given и matching headings
+      - Уточняющие слова, от которых зависит выбор между True, False и Not Given
+      - Семь способов, которыми строится неверный вариант ответа
+      - Три тренировочных текста с подробно объясненными ключами и как найти причину каждой ошибки
   - name: IELTS Academic Writing handbook
     text: How the band is calculated, a method for Task 1 and all five Task 2 types, and annotated model answers.
+    text_ru: Как считается band, метод для Task 1 и всех пяти типов Task 2 и образцы ответов с комментариями.
     eur: "15"
     kzt: "8,000"
     tribute: "https://web.tribute.tg/p/I7o"
@@ -99,8 +139,15 @@ ielts_books:
       - Paraphrasing, turning verbs into nouns, and twelve structures that signal Band 7 and above
       - Forty informal-to-formal replacements, and the forty-five most common accuracy mistakes
       - A six-step proofreading routine, and practice banks for both tasks
+    inside_ru:
+      - Как считается ваш band и что делает экзаменатор при проверке
+      - Полный метод для Task 1 Academic и всех пяти типов вопросов Task 2 с образцами ответов и комментариями к ним, и разбор ошибок для каждого задания
+      - Перефразирование, превращение глаголов в существительные и двенадцать конструкций, которые показывают уровень Band 7 и выше
+      - Сорок замен неформальных выражений на формальные и сорок пять самых частых ошибок в accuracy
+      - Порядок вычитки из шести шагов и сборники упражнений для обоих заданий
   - name: IELTS Speaking handbook
     text: The four criteria as an examiner hears them, model answers at Band 6, 7 and 8, and sixty task cards.
+    text_ru: Четыре критерия так, как их слышит экзаменатор, образцы ответов на Band 6, 7 и 8 и шестьдесят карточек с заданиями.
     eur: "15"
     kzt: "8,000"
     tribute: "https://web.tribute.tg/p/I7p"
@@ -110,8 +157,15 @@ ielts_books:
       - Seven ways to expand an answer so that it fills the full two minutes
       - Phrase and topic vocabulary banks, and a four-week pronunciation program
       - Sixty task cards, a Part 3 question bank and three practice tests
+    inside_ru:
+      - Четыре критерия оценки так, как их слышит экзаменатор, в том числе что значит fluency и какие паузы снижают оценку
+      - Метод для каждой части теста с образцами ответов на Band 6, 7 и 8 и комментариями к ним
+      - Семь способов развернуть ответ так, чтобы он занял все две минуты
+      - Подборки фраз и тематической лексики и четырехнедельная программа по произношению
+      - Шестьдесят карточек с заданиями, банк вопросов для Part 3 и три тренировочных теста
   - name: IELTS Vocabulary and Grammar handbook
     text: The grammar and vocabulary the other four handbooks assume, starting with a ten-minute diagnostic.
+    text_ru: Грамматика и лексика, на которые опираются остальные четыре пособия, начиная с десятиминутной диагностики.
     eur: "15"
     kzt: "8,000"
     tribute: "https://web.tribute.tg/p/I7s"
@@ -121,9 +175,16 @@ ielts_books:
       - "Band 8 structures: subordination, relative clauses, all five conditionals, participle clauses, inversion, and turning verbs into nouns"
       - Forty-one academic words, topic vocabulary for twelve subject areas, and how words combine and build from a root
       - Easily confused words, words that look familiar but mean something else, and the mistakes Russian and Kazakh speakers make most often
+    inside_ru:
+      - Грамматика и лексика, которые в остальных четырех пособиях считаются уже известными
+      - Десятиминутная диагностика, которая показывает, какая часть повторения грамматики вам нужна
+      - "Конструкции уровня Band 8: подчинение, relative clauses, все пять conditionals, participle clauses, инверсия и превращение глаголов в существительные"
+      - Сорок одно академическое слово, тематическая лексика по двенадцати областям и то, как слова сочетаются и образуются от корня
+      - Слова, которые легко перепутать, слова, которые выглядят знакомо, но значат другое, и ошибки, которые чаще всего делают носители русского и казахского языков
 admissions_first:
   - name: Admissions consultation
     text: A 90-minute call on where you want to apply, how your profile reads to an admissions committee, budget, funding and timeline. A written summary with next steps follows by the end of the next working day.
+    text_ru: Звонок на 90 минут о том, куда вы хотите поступать, как ваш профиль видит приемная комиссия, о бюджете, финансировании и сроках. Письменный итог со следующими шагами приходит к концу следующего рабочего дня.
     eur: "38"
     kzt: "19,500"
     tribute: "https://t.me/tribute/app?startapp=pI9E"
@@ -134,6 +195,11 @@ admissions_mentorship:
     calls: Up to 8, booked when needed
     review: Up to 8 hours
     chat: Tuesday to Saturday
+    name_ru: 4 недели
+    suits_ru: Постоянная поддержка, продлевается каждые 4 недели
+    calls_ru: До 8, по мере необходимости
+    review_ru: До 8 часов
+    chat_ru: Со вторника по субботу
     eur: "300"
     kzt: "153,000"
     tribute: "https://t.me/tribute/app?startapp=pIaa"
@@ -142,6 +208,11 @@ admissions_mentorship:
     calls: Up to 2
     review: Up to 2 hours
     chat: Tuesday to Saturday
+    name_ru: 1 неделя
+    suits_ru: Неделя дедлайна, одна задача или первая неделя перед тем, как брать месяц
+    calls_ru: До 2
+    review_ru: До 2 часов
+    chat_ru: Со вторника по субботу
     eur: "75"
     kzt: "38,500"
     tribute: "https://t.me/tribute/app?startapp=pIab"
@@ -149,11 +220,13 @@ admissions_mentorship:
 admissions_reviews:
   - name: Essay or document review
     text: One essay, personal statement, supplemental essay or motivation letter of up to 1,000 words, with one round of written comments, within 2 working days.
+    text_ru: Одно эссе, personal statement, supplemental essay или мотивационное письмо объемом до 1 000 слов, один раунд письменных комментариев, в течение 2 рабочих дней.
     eur: "15"
     kzt: "8,000"
     tribute: "https://t.me/tribute/app?startapp=pIa7"
   - name: Application set review
     text: Up to 5 application documents read together, with feedback on each and on how they work as a set, within 3 working days.
+    text_ru: До 5 документов для поступления, прочитанных вместе, с обратной связью по каждому документу и по комплекту в целом, в течение 3 рабочих дней.
     eur: "50"
     kzt: "25,500"
     tribute: "https://t.me/tribute/app?startapp=pIa8"
@@ -161,6 +234,7 @@ admissions_reviews:
 admissions_guides:
   - name: Essay Toolkit
     text: 43 pages for high school students applying to bachelor's programs abroad, with annotated examples and worksheets.
+    text_ru: 43 страницы для старшеклассников, которые поступают на бакалавриат за рубежом, с разобранными примерами и рабочими листами.
     eur: "15"
     kzt: "8,000"
     tribute: "https://web.tribute.tg/p/I7D"
@@ -169,8 +243,14 @@ admissions_guides:
       - How to find a topic of your own
       - How to draft and then cut
       - How to answer supplemental prompts without repeating the main essay
+    inside_ru:
+      - Чем эссе для поступления в американском стиле отличается от школьного сочинения
+      - Как найти собственную тему
+      - Как написать черновик, а потом сократить его
+      - Как отвечать на supplemental prompts, не повторяя основное эссе
   - name: Recommendation Letter Toolkit
     text: 30 pages on the part of the application your teachers write, with templates and a full example letter.
+    text_ru: 30 страниц о той части заявки, которую пишут ваши учителя, с шаблонами и полным примером письма.
     eur: "15"
     kzt: "8,000"
     tribute: "https://web.tribute.tg/p/I7E"
@@ -179,8 +259,14 @@ admissions_guides:
       - What to give them so the letter says something specific
       - How submission works
       - What to do when the letter is written in Russian
+    inside_ru:
+      - О чем и когда просить учителя
+      - Что дать учителю, чтобы письмо получилось конкретным
+      - Как устроена отправка
+      - Что делать, если письмо написано на русском
   - name: Common App and CSS Profile Guide
     text: Every section of the Common App and the CSS Profile for students in Kazakhstan at NIS, NIS IB and regular schools, checked for the 2026-27 cycle.
+    text_ru: Все разделы Common App и CSS Profile для учеников NIS, NIS IB и обычных школ Казахстана, проверенные для цикла 2026-27.
     eur: "11"
     kzt: "6,000"
     tribute: "https://web.tribute.tg/p/GCy"
@@ -189,28 +275,46 @@ admissions_guides:
       - What to enter for marks, GPA and class rank, without converting to a 4.0 scale
       - Activities and honors within the character limits, with a before-and-after example
       - The CSS Profile for families in Kazakhstan, including parents' tax return status and IDOC documents
+    inside_ru:
+      - Как сопоставить 11-летнюю школьную систему Казахстана с 9-12 классами в США
+      - Что указывать в оценках, GPA и class rank, не переводя их в шкалу 4.0
+      - Activities и honors в пределах лимита символов, с примером до и после
+      - CSS Profile для семей из Казахстана, включая статус налоговой декларации родителей и документы IDOC
 
 schools:
   - name: Workshop or webinar
     text: One session for staff or students, on IELTS or admissions.
     price: 50 EUR per session hour
     kzt: 25,500 KZT per session hour
+    text_ru: Одно занятие для сотрудников или учеников по IELTS или поступлению.
+    price_ru: 50 EUR за час занятия
+    kzt_ru: 25&nbsp;500 KZT за час занятия
   - name: Curriculum audit
     text: A review of one IELTS preparation or TESOL course program, with a written report.
     price: From 245 EUR
     kzt: From 125,000 KZT
+    text_ru: Анализ одной программы подготовки к IELTS или программы TESOL с письменным отчетом.
+    price_ru: От 245 EUR
+    kzt_ru: От 125&nbsp;000 KZT
   - name: Curriculum design or coordination
     text: Building or restructuring a course or program, estimated after a scoping call.
     price: 15 to 20 EUR per hour
     kzt: 8,000 to 10,500 KZT per hour
+    text_ru: Создание или перестройка учебной программы, стоимость оценивается после вводного звонка.
+    price_ru: От 15 до 20 EUR в час
+    kzt_ru: От 8&nbsp;000 до 10&nbsp;500 KZT в час
   - name: Partnerships
     text: Referrals, co-branded content or ongoing collaboration.
     price: Agreed individually
     kzt: ""
+    text_ru: Рефералы, совместный контент или постоянное сотрудничество.
+    price_ru: По договоренности
+    kzt_ru: ""
 
 other_first:
   - name: SAT, AP or A-Level diagnostic
     text: A 90-minute call and a written report, one per subject. Tutoring after it is quoted per subject.
+    text_ru: Звонок на 90 минут и письменный отчет, по одному на предмет. Стоимость занятий после диагностики рассчитывается для каждого предмета отдельно.
     eur: "33"
     kzt: "17,000"
     tribute: ""

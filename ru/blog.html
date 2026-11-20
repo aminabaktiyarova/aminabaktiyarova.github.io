@@ -1,0 +1,80 @@
+---
+layout: default
+lang: ru
+title: Блог
+description: >-
+  Посты об учебе за рубежом, IELTS и английском, исследованиях и обо всем, что стоит записать.
+nav: blog
+permalink: /ru/blog/
+---
+{%- assign months = "января,февраля,марта,апреля,мая,июня,июля,августа,сентября,октября,ноября,декабря" | split: "," -%}
+  <div class="wrap top">
+    <h1>Блог</h1>
+    {% if site.posts.size == 0 %}
+    <p class="lede">Пока здесь пусто. Первые посты уже в работе.</p>
+    {% endif %}
+  </div>
+
+  <div class="wrap">
+    {% if site.posts.size > 0 %}
+    {% assign tags = site.tags | sort %}
+    <div class="tagbar" id="tagbar">
+      <button type="button" class="tag on" data-tag="">Все</button>
+      {% for tag in tags %}
+      <button type="button" class="tag" data-tag="{{ tag[0] }}">{{ tag[0] }}</button>
+      {% endfor %}
+    </div>
+
+    <ul class="posts" id="posts">
+      {% for post in site.posts %}
+      {%- assign m = post.date | date: "%-m" | minus: 1 %}
+      <li data-tags="|{{ post.tags | join: '|' }}|">
+        <h3><a href="{{ post.url | relative_url }}" lang="en">{{ post.title }}</a></h3>
+        <p class="meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d" }} {{ months[m] }} {{ post.date | date: "%Y" }}</time>
+          {% for t in post.tags %}<button type="button" class="tag" data-tag="{{ t }}">{{ t }}</button>{% endfor %}
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <p class="empty" id="empty" hidden>Постов с этим тегом нет.</p>
+
+    <script>
+    (function () {
+      const items = Array.from(document.querySelectorAll('#posts > li'));
+      const bar = document.getElementById('tagbar');
+      const empty = document.getElementById('empty');
+
+      function apply(tag) {
+        let shown = 0;
+        items.forEach(li => {
+          const hit = !tag || li.dataset.tags.includes('|' + tag + '|');
+          li.hidden = !hit;
+          if (hit) shown++;
+        });
+        empty.hidden = shown > 0;
+        bar.querySelectorAll('.tag').forEach(b => {
+          b.classList.toggle('on', (b.dataset.tag || '') === tag);
+        });
+        try {
+          if (tag) {
+            history.replaceState(null, '', '#' + tag);
+          } else {
+            history.replaceState(null, '', location.pathname);
+          }
+        } catch (e) { /* blocked in sandboxed previews */ }
+      }
+
+      document.addEventListener('click', function (e) {
+        const btn = e.target.closest('.tag');
+        if (!btn) return;
+        apply(btn.dataset.tag || '');
+      });
+
+      const start = decodeURIComponent(location.hash.replace('#', ''));
+      if (start) apply(start);
+    })();
+    </script>
+    {% endif %}
+  </div>
