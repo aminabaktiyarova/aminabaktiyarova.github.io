@@ -445,6 +445,7 @@ h4 {
   line-height: 1.5;
   color: var(--muted);
 }
+.tracks.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .tracks a:hover { border-top-color: var(--burgundy); }
 .tracks a:hover .t { color: var(--burgundy); }
 
@@ -474,7 +475,7 @@ h4 {
 }
 .track > .intro { margin-top: -12px; margin-bottom: 22px; }
 .track > h3 { margin: 0 0 6px; }
-.block { margin-bottom: 56px; }
+.block { margin-bottom: 56px; scroll-margin-top: 20px; }
 .block:last-child { margin-bottom: 0; }
 .block > h3 { margin: 0 0 6px; }
 
@@ -614,6 +615,9 @@ details li::before {
 }
 .path h3 { font-size: 20px; margin: 0 0 6px; }
 .path p { margin: 0; font-size: 16.5px; line-height: 1.5; }
+.path.stages { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
+.path.stages li::before { content: counter(step, upper-alpha); }
+.path.stages h3 { font-size: 24px; }
 
 .ticks, .crosses { list-style: none; margin: 0; padding: 0; }
 .ticks li, .crosses li { position: relative; padding-left: 24px; margin-bottom: 10px; font-size: 18px; line-height: 1.5; }
@@ -649,10 +653,12 @@ details li::before {
   .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; border-bottom: 0; }
   .plan, .plan:first-child { border-left: 0; padding-left: 0; padding-right: 0; border-bottom: 1px solid var(--rule); }
   .path { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .path.stages { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .tracks.four { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 28px; }
 }
 
 @media (max-width: 699px) {
-  .tracks { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .tracks, .tracks.four { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .tracks .t { font-size: 24px; }
   .pay { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 14px 16px; }
   .track { margin-bottom: 72px; }
@@ -673,7 +679,8 @@ details li::before {
   .plan dd { margin-bottom: 6px; font-size: 16.5px; }
 
   .covers, .pair { grid-template-columns: minmax(0, 1fr); }
-  .path { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .path, .path.stages { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .path.stages h3 { font-size: 20px; }
   .path li { display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 8px; }
   .path li::before { grid-row: 1 / 3; font-size: 34px; margin: 0; }
   .ticks li, .crosses li, .terms dd { font-size: 17px; }

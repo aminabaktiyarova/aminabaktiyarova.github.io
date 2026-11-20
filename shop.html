@@ -11,9 +11,10 @@ permalink: /shop/
     <h1>Shop</h1>
     <p class="lede">Consultations, tutoring, mentorship, reviews and self-study guides.</p>
 
-    <nav class="tracks" aria-label="Shop sections">
-      <a href="#ielts"><span class="t">IELTS</span><span class="d">First steps, 4-week packages, writing reviews, handbooks</span></a>
-      <a href="#admissions"><span class="t">Admissions</span><span class="d">Consultation, mentorship, essay reviews, guides</span></a>
+    <nav class="tracks four" aria-label="Shop sections">
+      <a href="#aim"><span class="t">Aim</span><span class="d">Admissions consultation</span></a>
+      <a href="#build"><span class="t">Build</span><span class="d">IELTS first steps, packages, reviews and handbooks; SAT, AP and A-Level</span></a>
+      <a href="#cross"><span class="t">Cross</span><span class="d">Mentorship, essay and application reviews, guides</span></a>
       <a href="#schools"><span class="t">Schools and companies</span><span class="d">Workshops, curriculum audits and design</span></a>
     </nav>
 
@@ -25,11 +26,25 @@ permalink: /shop/
 
   <div class="wrap">
 
-    <section id="ielts" class="track">
-      <h2>IELTS</h2>
+    <section id="aim" class="track">
+      <h2>Aim</h2>
 
       <div class="block">
         <h3>Start here</h3>
+        <p class="intro">Every mentorship client starts with this consultation.</p>
+        <ul class="pricelist">
+          {%- for o in shop.admissions_first %}
+          {% include shop-row.html item=o %}
+          {%- endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <section id="build" class="track">
+      <h2>Build</h2>
+
+      <div class="block" id="ielts">
+        <h3>IELTS first steps</h3>
         <p class="intro">Every new IELTS student starts with one of these two.</p>
         <ul class="pricelist">
           {%- for o in shop.ielts_first %}
@@ -39,7 +54,7 @@ permalink: /shop/
       </div>
 
       <div class="block">
-        <h3>4-week packages</h3>
+        <h3>IELTS 4-week packages</h3>
         <p class="intro">Live online lessons of 1.5 hours. The first step tells you which package fits.</p>
         <div class="plans">
           {%- for p in shop.ielts_packages %}
@@ -61,7 +76,7 @@ permalink: /shop/
       </div>
 
       <div class="block">
-        <h3>Single review</h3>
+        <h3>IELTS single review</h3>
         <ul class="pricelist">
           {%- for o in shop.ielts_reviews %}
           {% include shop-row.html item=o %}
@@ -70,7 +85,7 @@ permalink: /shop/
       </div>
 
       <div class="block">
-        <h3>Handbooks for self-study</h3>
+        <h3>IELTS handbooks for self-study</h3>
         <p class="intro">PDF files, sent straight after payment. Free notes for all five skills are in my <a href="{{ site.telegram_channel }}">Telegram channel</a>.</p>
         <ul class="pricelist">
           {%- for o in shop.ielts_books %}
@@ -78,22 +93,22 @@ permalink: /shop/
           {%- endfor %}
         </ul>
       </div>
-    </section>
 
-    <section id="admissions" class="track">
-      <h2>Admissions</h2>
-
-      <div class="block">
-        <h3>Start here</h3>
-        <p class="intro">Every mentorship client starts with this consultation.</p>
+      <div class="block" id="sat">
+        <h3>SAT, AP and A-Level</h3>
+        <p class="intro">On request.</p>
         <ul class="pricelist">
-          {%- for o in shop.admissions_first %}
+          {%- for o in shop.other_first %}
           {% include shop-row.html item=o %}
           {%- endfor %}
         </ul>
       </div>
+    </section>
 
-      <div class="block">
+    <section id="cross" class="track">
+      <h2>Cross</h2>
+
+      <div class="block" id="admissions">
         <h3>Mentorship</h3>
         <p class="intro">Support with applications to universities abroad, from the program list to the first weeks after you arrive.</p>
         <div class="plans two">
@@ -154,16 +169,6 @@ permalink: /shop/
         {%- endfor %}
       </ul>
       <p class="actions"><a class="btn" href="mailto:{{ site.email }}">Email me</a><a class="btn" href="{{ site.telegram_direct }}">Message on Telegram</a></p>
-    </section>
-
-    <section id="sat" class="track">
-      <h3>SAT, AP and A-Level</h3>
-      <p class="intro">On request.</p>
-      <ul class="pricelist">
-        {%- for o in shop.other_first %}
-        {% include shop-row.html item=o %}
-        {%- endfor %}
-      </ul>
     </section>
 
   </div>
