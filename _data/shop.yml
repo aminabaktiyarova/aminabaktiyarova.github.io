@@ -264,12 +264,12 @@ admissions_guides:
       - Что дать учителю, чтобы письмо получилось конкретным
       - Как устроена отправка
       - Что делать, если письмо написано на русском
-  - name: Common App and CSS Profile Guide
-    text: Every section of the Common App and the CSS Profile for students in Kazakhstan at NIS, NIS IB and regular schools, checked for the 2026-27 cycle.
-    text_ru: Все разделы Common App и CSS Profile для учеников NIS, NIS IB и обычных школ Казахстана, проверенные для цикла 2026-27.
+  - name: Common App and CSS Profile Guide for Kazakhstan
+    text: Every section of the Common App and the CSS Profile for students in Kazakhstan at NIS, NIS IB and regular schools, checked for the 2026-27 cycle. In Russian.
+    text_ru: Все разделы Common App и CSS Profile для учеников NIS, NIS IB и обычных школ Казахстана, проверенные для цикла 2026-27. На русском.
     eur: "11"
     kzt: "6,000"
-    tribute: "https://web.tribute.tg/p/GCy"
+    tribute: "https://web.tribute.tg/p/L6k"
     inside:
       - How to map Kazakhstan's 11-year system to US grades 9 to 12
       - What to enter for marks, GPA and class rank, without converting to a 4.0 scale
@@ -280,6 +280,22 @@ admissions_guides:
       - Что указывать в оценках, GPA и class rank, не переводя их в шкалу 4.0
       - Activities и honors в пределах лимита символов, с примером до и после
       - CSS Profile для семей из Казахстана, включая статус налоговой декларации родителей и документы IDOC
+  - name: Common App and CSS Profile Guide (International)
+    text: Every section of the Common App and the CSS Profile for applicants from any country outside the US, checked for the 2026-27 cycle. In English, 19 pages.
+    text_ru: Все разделы Common App и CSS Profile для абитуриентов из любой страны за пределами США, проверенные для цикла 2026-27. На английском, 19 страниц.
+    eur: "11"
+    kzt: "6,000"
+    tribute: "https://web.tribute.tg/p/L6f"
+    inside:
+      - How to map an 11-, 12- or 13-year school system to US grades 9 to 12
+      - What to enter for marks, GPA, class rank and leaving examinations, without converting to a 4.0 scale
+      - Activities, honors and the three writing sections within their limits
+      - The CSS Profile for international families, and the colleges that are need-blind for international applicants
+    inside_ru:
+      - Как сопоставить школьную систему из 11, 12 или 13 лет с 9-12 классами в США
+      - Что указывать в оценках, GPA, class rank и выпускных экзаменах, не переводя их в шкалу 4.0
+      - Activities, honors и три письменных раздела в пределах лимитов
+      - CSS Profile для иностранных семей и колледжи, которые рассматривают иностранных абитуриентов need-blind
 
 schools:
   - name: Workshop or webinar
